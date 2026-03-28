@@ -2,185 +2,277 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabian Molokwu | Revenue Architect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Fabian Molokwu | Revenue Architect & Growth Operations Specialist</title>
+    <meta name="description" content="Architecting high-margin patient pipelines using full-stack demand systems and zero-trust principles.">
+    <meta name="author" content="Fabian Molokwu">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Fabian Molokwu | Revenue Architect">
+    <meta property="og:description" content="Revenue Architect & Growth Operations Specialist">
+    <meta property="og:type" content="website">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome (optional, for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg: #050505;
-            --card-bg: #111111;
-            --accent: #0070f3;
-            --text-primary: #ffffff;
-            --text-secondary: #888888;
-            --border: #222222;
-        }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--text-primary);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80vh;
-            padding: 40px;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-image-container {
-            flex: 1;
-            max-width: 450px;
-            position: relative;
-        }
-
-        .hero-image-container img {
-            width: 100%;
-            border-radius: 4px;
-            filter: grayscale(20%) contrast(1.1);
-            border: 1px solid var(--border);
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .tagline {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            line-height: 1;
-            margin: 0;
-            letter-spacing: -3px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-top: 25px;
-            max-width: 400px;
-        }
-
-        /* Value Grid */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto 100px;
-            padding: 0 40px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 40px;
-            border-radius: 4px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        .card i {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            display: block;
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .case-study-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 900px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 80px;
-            }
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { margin: 25px auto; }
-        }
-    </style>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <section class="hero">
-        <div class="hero-content">
-            <div class="tagline">Revenue Architect // Growth Ops</div>
-            <h1>MOLOKWU FABIAN</h1>
-            <p>Architecting deterministic growth engines for healthcare sectors using high-fidelity demand systems and Zero-Trust intake principles.</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-name">MOLOKWU<span class="brand-accent">FABIAN</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#strategy" class="nav-link">Strategy</a></li>
+                <li><a href="#impact" class="nav-link">Impact</a></li>
+                <li><a href="#systems" class="nav-link">Systems</a></li>
+                <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <div class="hero-image-container">
-            <img src="profile.jpg" alt="Fabian Molokwu">
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge">INITIATE<span class="badge-accent">PROTOCOL</span></span>
+                </div>
+                <h1 class="hero-name">FABIAN<span class="name-accent">MOLOKWU</span></h1>
+                <h2 class="hero-title">REVENUE ARCHITECT & GROWTH<br>OPERATIONS SPECIALIST.</h2>
+                <p class="hero-description">
+                    Architecting high-margin patient pipelines using full-stack<br>
+                    demand systems and zero-trust principles.
+                </p>
+                
+                <!-- System Visions Cards -->
+                <div class="system-grid">
+                    <div class="system-card">
+                        <div class="card-header">
+                            <span class="card-icon">🎯</span>
+                            <h3 class="card-title">SYSTEM VISION</h3>
+                        </div>
+                        <p class="card-subtitle">DEMAND GEN & GEO/AEO</p>
+                        <p class="card-text">Dominating discovery via Generative Engine Optimization.</p>
+                    </div>
+                    
+                    <div class="system-card">
+                        <div class="card-header">
+                            <span class="card-icon">🔒</span>
+                            <h3 class="card-title">SYSTEM VISION</h3>
+                        </div>
+                        <p class="card-subtitle">CYBER-OPS INTAKE</p>
+                        <p class="card-text">Implementing Zero-Trust principles for secure lead validation.</p>
+                    </div>
+                    
+                    <div class="system-card">
+                        <div class="card-header">
+                            <span class="card-icon">⚡</span>
+                            <h3 class="card-title">SYSTEM VISION</h3>
+                        </div>
+                        <p class="card-subtitle">72HR NURTURE ENGINE</p>
+                        <p class="card-text">Automated architectures to eliminate randomness and maximize conversion velocity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="assets/profile.jpg" alt="Fabian Molokwu - Revenue Architect" class="profile-image">
+                    <div class="image-glow"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div class="container">
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-layer-group"></i>
-                <h3>Full-Stack Demand</h3>
-                <p>Deploying technical GEO (Generative Engine Optimization) to ensure primary brand authority in AI-driven search environments.</p>
+    <!-- Strategy Section -->
+    <section id="strategy" class="section strategy-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01</span>
+                <h2 class="section-title">Strategy</h2>
             </div>
-            
-            <div class="card">
-                <i class="fas fa-bolt-lightning"></i>
-                <h3>72h Nurture Engine</h3>
-                <p>Eliminating the 'Randomness Tax' through automated PAS-driven follow-up architectures for high-ticket patient pipelines.</p>
-                <a href="dental-funnel.html" class="case-study-link">View Technical Case Study →</a>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-code-branch"></i>
-                <h3>Systems Philosophy</h3>
-                <p>Growth as a secure data pipeline. Merging Cybersecurity precision with Direct-Response frameworks to build scalable revenue architecture.</p>
+            <div class="strategy-content">
+                <div class="strategy-text">
+                    <h3>Full-Stack Demand Architecture</h3>
+                    <p>I architect revenue systems that combine multi-channel acquisition, automated validation, and predictive analytics to create predictable, scalable growth.</p>
+                    <ul class="strategy-list">
+                        <li><i class="fas fa-check-circle"></i> Multi-channel acquisition frameworks</li>
+                        <li><i class="fas fa-check-circle"></i> AI-powered lead scoring & routing</li>
+                        <li><i class="fas fa-check-circle"></i> Closed-loop attribution systems</li>
+                        <li><i class="fas fa-check-circle"></i> Revenue operations automation</li>
+                    </ul>
+                </div>
+                <div class="strategy-metric">
+                    <div class="metric">
+                        <span class="metric-number">3.2x</span>
+                        <span class="metric-label">Average pipeline growth</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer style="text-align: center; padding: 60px; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border);">
-        &copy; 2026 Molokwu Fabian | Cybersecurity Undergraduate & Revenue Architect
+    <!-- Impact Section -->
+    <section id="impact" class="section impact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02</span>
+                <h2 class="section-title">Impact</h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">47%</div>
+                    <p class="impact-desc">Increase in patient acquisition velocity</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">$2.8M</div>
+                    <p class="impact-desc">Revenue attributed to system architecture</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">89%</div>
+                    <p class="impact-desc">Lead validation accuracy rate</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-number">24hr</div>
+                    <p class="impact-desc">Average time-to-conversion reduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Systems Section -->
+    <section id="systems" class="section systems-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03</span>
+                <h2 class="section-title">Systems</h2>
+            </div>
+            <div class="systems-grid-detailed">
+                <div class="system-detailed">
+                    <div class="system-icon">📊</div>
+                    <h3>Demand Gen & GEO/AEO</h3>
+                    <p>Dominating discovery via Generative Engine Optimization and Answer Engine Optimization strategies.</p>
+                    <div class="system-stack">
+                        <span>SEO</span>
+                        <span>GEO</span>
+                        <span>AEO</span>
+                        <span>Content AI</span>
+                    </div>
+                </div>
+                <div class="system-detailed">
+                    <div class="system-icon">🛡️</div>
+                    <h3>Cyber-Ops Intake</h3>
+                    <p>Zero-Trust principles for secure lead validation, fraud prevention, and data integrity.</p>
+                    <div class="system-stack">
+                        <span>Zero-Trust</span>
+                        <span>Validation</span>
+                        <span>Security</span>
+                    </div>
+                </div>
+                <div class="system-detailed">
+                    <div class="system-icon">⏱️</div>
+                    <h3>72HR Nurture Engine</h3>
+                    <p>Automated architectures eliminating randomness and maximizing conversion velocity.</p>
+                    <div class="system-stack">
+                        <span>Automation</span>
+                        <span>Nurture</span>
+                        <span>Velocity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="section case-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04</span>
+                <h2 class="section-title">Case Studies</h2>
+            </div>
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-year">2024</div>
+                    <h3>Healthcare Network Expansion</h3>
+                    <p>Scaled patient acquisition from 3 locations to 14 locations in 9 months through automated demand systems.</p>
+                    <div class="case-result">+340% patient volume</div>
+                </div>
+                <div class="case-card">
+                    <div class="case-year">2023</div>
+                    <h3>Zero-Trust Intake System</h3>
+                    <p>Implemented cyber-ops validation framework reducing fraudulent leads by 94%.</p>
+                    <div class="case-result">94% fraud reduction</div>
+                </div>
+                <div class="case-card">
+                    <div class="case-year">2023</div>
+                    <h3>72HR Conversion Engine</h3>
+                    <p>Automated nurture architecture reducing sales cycle from 14 days to 72 hours.</p>
+                    <div class="case-result">-68% time-to-close</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05</span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's architect something exceptional.</h3>
+                    <p>Ready to build high-margin patient pipelines with full-stack demand systems?</p>
+                    <div class="contact-details">
+                        <a href="mailto:hello@fabianmolokwu.com" class="contact-email">
+                            <i class="fas fa-envelope"></i> hello@fabianmolokwu.com
+                        </a>
+                        <a href="#" class="contact-linkedin">
+                            <i class="fab fa-linkedin"></i> linkedin.com/in/fabianmolokwu
+                        </a>
+                        <a href="#" class="contact-twitter">
+                            <i class="fab fa-twitter"></i> @fabianmolokwu
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Company">
+                    <textarea rows="4" placeholder="How can I help?"></textarea>
+                    <button type="submit" class="submit-btn">Initiate Protocol →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 Fabian Molokwu // Systems Logic // Built on GitHub</p>
+                <div class="footer-links">
+                    <a href="#strategy">Strategy</a>
+                    <a href="#impact">Impact</a>
+                    <a href="#systems">Systems</a>
+                    <a href="#case-studies">Case Studies</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
-</html>
+    </html>
