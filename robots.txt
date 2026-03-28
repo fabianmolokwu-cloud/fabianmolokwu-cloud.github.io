@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Specifically inviting AI Search and Generative Engines
+User-agent: Google-Other
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://fabianmolokwu-cloud.github.io/sitemap.xml
+
