@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabian Molokwu | Revenue Architect & Growth Operations Specialist</title>
-    <meta name="description" content="Architecting high-margin patient pipelines using full-stack demand systems and zero-trust principles.">
+    <meta name="description" content="Architecting high-margin patient pipelines using full-stack demand systems and zero-trust principles. Dominating discovery via Generative Engine Optimization and AI Answer Engines.">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -397,7 +397,7 @@
             font-size: 0.75rem;
         }
 
-        /* Case Studies */
+        /* Case Studies - Updated */
         .case-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -409,6 +409,12 @@
             border-radius: 20px;
             padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            border-color: rgba(0, 255, 157, 0.3);
+            transform: translateY(-4px);
         }
 
         .case-year {
@@ -420,101 +426,148 @@
 
         .case-card h3 {
             font-size: 1.25rem;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
         }
 
-        .case-card p {
-            color: #888;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
+        .case-problem {
+            background: rgba(255, 100, 100, 0.1);
+            border-left: 3px solid #ff6464;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            font-size: 0.8rem;
+            color: #ffaaaa;
+        }
+
+        .case-architecture {
+            background: rgba(0, 255, 157, 0.1);
+            border-left: 3px solid #00ff9d;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            font-size: 0.8rem;
+            color: #aaffdd;
         }
 
         .case-result {
-            font-size: 0.875rem;
+            background: rgba(100, 255, 100, 0.1);
+            border-left: 3px solid #64ff64;
+            padding: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            color: #00ff9d;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #64ff64;
         }
 
-        /* Contact Section */
+        /* Insight Block */
+        .insight-block {
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.05), rgba(0, 100, 100, 0.1));
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem auto;
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .insight-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .insight-block p {
+            font-size: 1.2rem;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .insight-highlight {
+            color: #00ff9d;
+            font-weight: 600;
+        }
+
+        /* Contact Section - WhatsApp CTA */
+        .contact-section {
+            text-align: center;
+        }
+
         .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            text-align: center;
         }
 
         .contact-info h3 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #00ff9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .contact-info p {
             color: #888;
             margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* WhatsApp CTA Button */
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.5rem;
         }
 
         .contact-details {
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 1rem;
+            margin-top: 2rem;
         }
 
         .contact-details a {
             color: #aaa;
             text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 0.75rem;
             transition: color 0.3s ease;
+            font-size: 0.9rem;
         }
 
         .contact-details a:hover {
-            color: #00ff9d;
+            color: #25D366;
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1rem;
-            color: #ffffff;
-            font-family: inherit;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #00ff9d;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #00ff9d, #00cc7a);
-            color: #0a0a0a;
-            border: none;
-            padding: 1rem;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
-        }
-
-        /* Footer */
+        /* Footer with Tech Stack Icons */
         .footer {
             padding: 3rem 0;
             background: #050505;
@@ -526,12 +579,37 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
         }
 
-        .footer-content p {
+        .footer-copyright p {
             color: #666;
             font-size: 0.875rem;
+        }
+
+        .footer-tech-stack {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #888;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item i {
+            font-size: 1.2rem;
+        }
+
+        .tech-item:hover {
+            color: #00ff9d;
+            transform: translateY(-2px);
         }
 
         .footer-links {
@@ -588,9 +666,8 @@
                 justify-content: center;
             }
             
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .contact-info h3 {
+                font-size: 1.5rem;
             }
             
             .nav-menu {
@@ -619,6 +696,14 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .footer-tech-stack {
+                justify-content: center;
+            }
+            
+            .insight-block p {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 640px) {
@@ -636,6 +721,19 @@
             
             .hero {
                 padding: 5rem 1rem 3rem;
+            }
+            
+            .whatsapp-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .footer-tech-stack {
+                gap: 1rem;
+            }
+            
+            .tech-item {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -713,6 +811,14 @@
         </div>
     </section>
 
+    <!-- Insight Block -->
+    <div class="container">
+        <div class="insight-block">
+            <div class="insight-icon">🤖</div>
+            <p>I architect systems that <span class="insight-highlight">don't just rank on Google</span> — they are the <span class="insight-highlight">primary recommendation for AI Answer Engines</span> (Perplexity, Gemini, ChatGPT).</p>
+        </div>
+    </div>
+
     <!-- Strategy Section -->
     <section id="strategy" class="section strategy-section">
         <div class="container">
@@ -729,6 +835,7 @@
                         <li><i class="fas fa-check-circle"></i> AI-powered lead scoring & routing</li>
                         <li><i class="fas fa-check-circle"></i> Closed-loop attribution systems</li>
                         <li><i class="fas fa-check-circle"></i> Revenue operations automation</li>
+                        <li><i class="fas fa-check-circle"></i> GEO/AEO optimization for AI discovery</li>
                     </ul>
                 </div>
                 <div class="strategy-metric">
@@ -780,7 +887,7 @@
                 <div class="system-detailed">
                     <div class="system-icon">📊</div>
                     <h3>Demand Gen & GEO/AEO</h3>
-                    <p>Dominating discovery via Generative Engine Optimization and Answer Engine Optimization strategies.</p>
+                    <p>Dominating discovery via Generative Engine Optimization and Answer Engine Optimization strategies. Ensuring visibility across Google, Perplexity, Gemini, and ChatGPT.</p>
                     <div class="system-stack">
                         <span>SEO</span>
                         <span>GEO</span>
@@ -791,7 +898,7 @@
                 <div class="system-detailed">
                     <div class="system-icon">🛡️</div>
                     <h3>Cyber-Ops Intake</h3>
-                    <p>Zero-Trust principles for secure lead validation, fraud prevention, and data integrity.</p>
+                    <p>Zero-Trust principles for secure lead validation, fraud prevention, and data integrity. Every lead is verified before entering the pipeline.</p>
                     <div class="system-stack">
                         <span>Zero-Trust</span>
                         <span>Validation</span>
@@ -801,7 +908,7 @@
                 <div class="system-detailed">
                     <div class="system-icon">⏱️</div>
                     <h3>72HR Nurture Engine</h3>
-                    <p>Automated architectures eliminating randomness and maximizing conversion velocity.</p>
+                    <p>Automated architectures eliminating randomness and maximizing conversion velocity. PAS frameworks that nurture leads within the golden 72-hour window.</p>
                     <div class="system-stack">
                         <span>Automation</span>
                         <span>Nurture</span>
@@ -812,7 +919,7 @@
         </div>
     </section>
 
-    <!-- Case Studies Section -->
+    <!-- Case Studies Section - Updated with New Case Study -->
     <section id="case-studies" class="section case-section">
         <div class="container">
             <div class="section-header">
@@ -820,29 +927,41 @@
                 <h2 class="section-title">Case Studies</h2>
             </div>
             <div class="case-grid">
+                <!-- New Case Study - Surgical Clinics -->
+                <div class="case-card">
+                    <div class="case-year">2024</div>
+                    <h3>Surgical Clinic Pipeline Rescue</h3>
+                    <div class="case-problem">
+                        <i class="fas fa-exclamation-triangle"></i> <strong>The Problem:</strong> Local surgical clinics were losing 70% of leads in the first 24 hours.
+                    </div>
+                    <div class="case-architecture">
+                        <i class="fas fa-cogs"></i> <strong>The Architecture:</strong> Deployed a 72-Hour Nurture Engine using PAS frameworks (Problem-Agitation-Solution).
+                    </div>
+                    <div class="case-result">
+                        <i class="fas fa-chart-line"></i> <strong>The Result:</strong> Increased lead-to-appointment conversion by 40%.
+                    </div>
+                </div>
+                
+                <!-- Existing Case Study 1 -->
                 <div class="case-card">
                     <div class="case-year">2024</div>
                     <h3>Healthcare Network Expansion</h3>
                     <p>Scaled patient acquisition from 3 locations to 14 locations in 9 months through automated demand systems.</p>
                     <div class="case-result">+340% patient volume</div>
                 </div>
+                
+                <!-- Existing Case Study 2 -->
                 <div class="case-card">
                     <div class="case-year">2023</div>
                     <h3>Zero-Trust Intake System</h3>
                     <p>Implemented cyber-ops validation framework reducing fraudulent leads by 94%.</p>
                     <div class="case-result">94% fraud reduction</div>
                 </div>
-                <div class="case-card">
-                    <div class="case-year">2023</div>
-                    <h3>72HR Conversion Engine</h3>
-                    <p>Automated nurture architecture reducing sales cycle from 14 days to 72 hours.</p>
-                    <div class="case-result">-68% time-to-close</div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - WhatsApp CTA -->
     <section id="contact" class="section contact-section">
         <div class="container">
             <div class="section-header">
@@ -853,34 +972,62 @@
                 <div class="contact-info">
                     <h3>Let's architect something exceptional.</h3>
                     <p>Ready to build high-margin patient pipelines with full-stack demand systems?</p>
+                    
+                    <!-- WhatsApp CTA Button -->
+                    <a href="https://wa.me/2349052206733?text=Initiate%20Protocol:%20I%20am%20interested%20in%20architecting%20a%20revenue%20pipeline." 
+                       class="whatsapp-btn" 
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i>
+                        Initiate Protocol
+                    </a>
+                    
                     <div class="contact-details">
-                        <a href="mailto:hello@fabianmolokwu.com" class="contact-email">
+                        <a href="mailto:hello@fabianmolokwu.com">
                             <i class="fas fa-envelope"></i> hello@fabianmolokwu.com
                         </a>
-                        <a href="#" class="contact-linkedin">
+                        <a href="#" target="_blank">
                             <i class="fab fa-linkedin"></i> linkedin.com/in/fabianmolokwu
-                        </a>
-                        <a href="#" class="contact-twitter">
-                            <i class="fab fa-twitter"></i> @fabianmolokwu
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Company">
-                    <textarea rows="4" placeholder="How can I help?"></textarea>
-                    <button type="submit" class="submit-btn">Initiate Protocol →</button>
-                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Tech Stack Icons -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>© 2026 Fabian Molokwu // Systems Logic // Built on GitHub</p>
+                <div class="footer-copyright">
+                    <p>© 2026 Fabian Molokwu // Systems Logic // Built on GitHub</p>
+                </div>
+                <div class="footer-tech-stack">
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-meta"></i>
+                        <span>Meta Ads</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Ads</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Cybersecurity</span>
+                    </div>
+                </div>
                 <div class="footer-links">
                     <a href="#strategy">Strategy</a>
                     <a href="#impact">Impact</a>
@@ -937,16 +1084,6 @@
             });
         });
 
-        // Contact form submission
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you for reaching out! I will get back to you soon.');
-                contactForm.reset();
-            });
-        }
-
         // Navbar background change on scroll
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -972,12 +1109,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.section, .system-card, .impact-card, .case-card').forEach(el => {
+        document.querySelectorAll('.section, .system-card, .impact-card, .case-card, .insight-block').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
-</body>
-    </html>
+            el
