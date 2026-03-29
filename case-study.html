@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Fabian Molokwu - Revenue Architect</title>
+    <meta name="description" content="Real-world case studies demonstrating revenue architecture success: Dental clinics, orthopedic surgery, B2B SaaS, and healthcare systems.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.5;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #00ff9d, transparent);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #00cc7a, transparent);
+            bottom: -300px;
+            right: -200px;
+            animation-delay: 5s;
+            opacity: 0.3;
+        }
+
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #00ff9d, #00aa55);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 10s;
+            opacity: 0.15;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(0, 255, 157, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 15s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand .brand-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .brand-accent {
+            color: #00ff9d;
+            margin-left: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #00ff9d;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff9d;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: #00ff9d;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #00ff9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            color: #aaa;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #00ff9d;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.25rem;
+        }
+
+        /* Case Study Grid */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .case-card {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .case-card:hover::before {
+            left: 100%;
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 255, 157, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 157, 0.1);
+        }
+
+        /* Case Study Image */
+        .case-image {
+            width: 100%;
+            height: 180px;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.1), rgba(0, 100, 100, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+        }
+
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .case-card:hover .case-image img {
+            transform: scale(1.05);
+        }
+
+        /* Fallback icon if image missing */
+        .image-fallback {
+            font-size: 3rem;
+            color: #00ff9d;
+            opacity: 0.5;
+        }
+
+        .case-number {
+            font-size: 0.7rem;
+            color: #00ff9d;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-niche {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: #00ff9d;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-section {
+            margin: 1.25rem 0;
+            padding: 1rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .case-problem {
+            background: rgba(255, 80, 80, 0.08);
+            border-left: 3px solid #ff5050;
+        }
+
+        .case-architecture {
+            background: rgba(0, 255, 157, 0.08);
+            border-left: 3px solid #00ff9d;
+        }
+
+        .case-impact {
+            background: rgba(80, 255, 120, 0.08);
+            border-left: 3px solid #50ff78;
+        }
+
+        .case-section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-section p {
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 1.5;
+        }
+
+        .impact-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .impact-stat {
+            background: rgba(0, 255, 157, 0.15);
+            padding: 0.5rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #00ff9d;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 255, 157, 0.1);
+            border-color: #00ff9d;
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            background: rgba(5, 5, 5, 0.8);
+            border-top: 1px solid rgba(0, 255, 157, 0.1);
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00ff9d;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-banner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(12px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 6rem 0 2rem;
+            }
+            
+            .stats-banner {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .case-card h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <span class="brand-name">MOLOKWU<span class="brand-accent">FABIAN</span></span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#strategy" class="nav-link">Strategy</a></li>
+                <li><a href="index.html#systems" class="nav-link">Systems</a></li>
+                <li><a href="case-study.html" class="nav-link" style="color: #00ff9d;">Case Studies</a></li>
+                <li><a href="frameworks.html" class="nav-link">Frameworks</a></li>
+                <li><a href="initiate.html" class="nav-link">Initiate</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-chart-line"></i> REAL RESULTS. REAL SYSTEMS.
+            </div>
+            <h1>Case Studies</h1>
+            <p class="hero-subtitle">Real-world transformations across healthcare, SaaS, and multi-location practices.</p>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <div class="container">
+        <div class="stats-banner">
+            <div class="stat-item">
+                <div class="stat-number">$142K</div>
+                <div class="stat-label">Revenue in 60 Days</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">94%</div>
+                <div class="stat-label">Fraud Reduction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3.2x</div>
+                <div class="stat-label">Demo Growth</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">340%</div>
+                <div class="stat-label">Patient Volume</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="container">
+        <div class="case-grid">
+            
+            <!-- Case Study 01: Aura Dental Group with logo.jpg -->
+            <div class="case-card">
+                <div class="case-number">01</div>
+                <div class="case-image">
+                    <img src="logo.jpg" alt="Aura Dental Group" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-tooth\'></i></div>'">
+                </div>
+                <h2>Aura Dental Group</h2>
+                <div class="case-niche">🦷 Multi-Location Cosmetic Dentistry (Veneers & Implants)</div>
+                
+                <div class="case-section case-problem">
+                    <div class="case-section-header">
+                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
+                        <span>THE PROBLEM</span>
+                    </div>
+                    <p>Aura was burning <strong>$8,000/month on Meta ads</strong>. They had lead volume, but a <strong>72% lead decay rate</strong>. Leads sat in a spreadsheet for 48 hours before the front desk called.</p>
+                </div>
+                
+                <div class="case-section case-architecture">
+                    <div class="case-section-header">
+                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
+                        <span>THE ARCHITECTURE</span>
+                    </div>
+                    <p><strong>72-Hour Nurture Engine</strong> — Automated 3-part PAS (Problem-Agitation-Solution) written sequence. Addressed dental anxiety in the first 4 hours, showcased "The Smile After" at 24 hours, provided frictionless booking link at 48 hours.</p>
+                </div>
+                
+                <div class="case-section case-impact">
+                    <div class="case-section-header">
+                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
+                        <span>THE IMPACT</span>
+                    </div>
+                    <p>Appointment show-rates jumped from <strong>22% to 58%</strong>.</p>
+                    <div class="impact-stats">
+                        <span class="impact-stat">💰 $142,000 revenue in 60 days</span>
+                        <span class="impact-stat">📈 +163% show-rate increase</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 02: Vanguard Health Systems with logo2.jpg -->
+            <div class="case-card">
+                <div class="case-number">02</div>
+                <div class="case-image">
+                    <img src="logo2.jpg" alt="Vanguard Health Systems" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-hospital-user\'></i></div>'">
+                </div>
+                <h2>Vanguard Health Systems</h2>
+                <div class="case-niche">🏥 Specialized Orthopedic Surgery & Rehabilitation</div>
+                
+                <div class="case-section case-problem">
+                    <div class="case-section-header">
+                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
+                        <span>THE PROBLEM</span>
+                    </div>
+                    <p>High-ticket patients were hesitant to submit medical history via <strong>"leaky" standard web forms</strong>. Vanguard was losing high-net-worth trust due to a lack of visible data security.</p>
+                </div>
+                
+                <div class="case-section case-architecture">
+                    <div class="case-section-header">
+                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
+                        <span>THE ARCHITECTURE</span>
+                    </div>
+                    <p><strong>Zero-Trust Cyber-Ops Intake</strong> — Replaced standard forms with an encrypted, multi-step validation funnel. Marketed the security of the intake as a premium trust feature.</p>
+                </div>
+                
+                <div class="case-section case-impact">
+                    <div class="case-section-header">
+                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
+                        <span>THE IMPACT</span>
+                    </div>
+                    <div class="impact-stats">
+                        <span class="impact-stat">🔒 94% reduction in junk/bot leads</span>
+                        <span class="impact-stat">📈 40% increase in high-intent inquiries</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 03: MedFlow Solutions with logo3.jpg -->
+            <div class="case-card">
+                <div class="case-number">03</div>
+                <div class="case-image">
+                    <img src="logo3.jpg" alt="MedFlow Solutions" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-microchip\'></i></div>'">
+                </div>
+                <h2>MedFlow Solutions</h2>
+                <div class="case-niche">💻 SaaS for Clinic Workflow Automation (B2B Medical Tech)</div>
+                
+                <div class="case-section case-problem">
+                    <div class="case-section-header">
+                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
+                        <span>THE PROBLEM</span>
+                    </div>
+                    <p>MedFlow's outbound emails were hitting <strong>spam filters</strong>. Their "spray and pray" method was damaging sender reputation and yielding <strong>zero demos</strong>.</p>
+                </div>
+                
+                <div class="case-section case-architecture">
+                    <div class="case-section-header">
+                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
+                        <span>THE ARCHITECTURE</span>
+                    </div>
+                    <p><strong>GEO/AEO Demand Generation</strong> — Shifted from "Pitching" to Authority-First Writing. Optimized technical documentation so AI engines (Perplexity/Gemini) cited MedFlow as the primary source.</p>
+                </div>
+                
+                <div class="case-section case-impact">
+                    <div class="case-section-header">
+                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
+                        <span>THE IMPACT</span>
+                    </div>
+                    <div class="impact-stats">
+                        <span class="impact-stat">🚀 3.2x increase in organic demo bookings</span>
+                        <span class="impact-stat">💰 $150 CPA → $45 CPA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 04: Zenith Pediatric Dental with logo4.jpg -->
+            <div class="case-card">
+                <div class="case-number">04</div>
+                <div class="case-image">
+                    <img src="logo4.jpg" alt="Zenith Pediatric Dental" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-child\'></i></div>'">
+                </div>
+                <h2>Zenith Pediatric Dental</h2>
+                <div class="case-niche">🦷 Pediatric Specialty & Orthodontics</div>
+                
+                <div class="case-section case-problem">
+                    <div class="case-section-header">
+                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
+                        <span>THE PROBLEM</span>
+                    </div>
+                    <p>Zenith scaled from <strong>2 to 6 locations</strong> but lead handling didn't scale. Tracking which office a lead belonged to was a manual, error-prone nightmare.</p>
+                </div>
+                
+                <div class="case-section case-architecture">
+                    <div class="case-section-header">
+                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
+                        <span>THE ARCHITECTURE</span>
+                    </div>
+                    <p><strong>Centralized Revenue Operations (RevOps)</strong> — Built custom routing logic that validated leads based on proximity and "Lead Heat" before pushing them into the specific clinic's CRM.</p>
+                </div>
+                
+                <div class="case-section case-impact">
+                    <div class="case-section-header">
+                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
+                        <span>THE IMPACT</span>
+                    </div>
+                    <div class="impact-stats">
+                        <span class="impact-stat">⏱️ 14 hours → 4 minutes to first contact</span>
+                        <span class="impact-stat">📈 340% patient volume across 6 branches</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 05: OmniScribe AI with logo5.jpg -->
+            <div class="case-card">
+                <div class="case-number">05</div>
+                <div class="case-image">
+                    <img src="logo5.jpg" alt="OmniScribe AI" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-microphone-alt\'></i></div>'">
+                </div>
+                <h2>OmniScribe AI</h2>
+                <div class="case-niche">🤖 AI-Powered Medical Scribe Software (B2B SaaS)</div>
+                
+                <div class="case-section case-problem">
+                    <div class="case-section-header">
+                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
+                        <span>THE PROBLEM</span>
+                    </div>
+                    <p>Doctors are the hardest "Avatar" to sell to. They hate marketing fluff. OmniScribe's video-heavy landing page had a <strong>0.5% conversion rate</strong>.</p>
+                </div>
+                
+                <div class="case-section case-architecture">
+                    <div class="case-section-header">
+                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
+                        <span>THE ARCHITECTURE</span>
+                    </div>
+                    <p><strong>Written-First Authority Framework</strong> — Scrapped high-production videos for high-gravity Direct-Response Copy. Used BAB (Before-After-Bridge) framework focusing entirely on the "Burnout" doctors feel from paperwork.</p>
+                </div>
+                
+                <div class="case-section case-impact">
+                    <div class="case-section-header">
+                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
+                        <span>THE IMPACT</span>
+                    </div>
+                    <div class="impact-stats">
+                        <span class="impact-stat">📊 0.5% → 4.2% conversion rate</span>
+                        <span class="impact-stat">🎯 12 enterprise demos in 14 days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="back-home">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 Fabian Molokwu // Systems Logic // Built on GitHub</p>
+                <div class="footer-links">
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#strategy">Strategy</a>
+                    <a href="index.html#systems">Systems</a>
+                    <a href="case-study.html">Case Studies</a>
+                    <a href="frameworks.html">Frameworks</a>
+                    <a href="initiate.html">Initiate</a>
+                    <a href="index.html#faq">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = navToggle.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (particlesContainer) {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    const size = Math.random() * 4 + 1;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDuration = Math.random() * 20 + 10 + 's';
+                    particle.style.animationDelay = Math.random() * 10 + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
+        }
+        createParticles();
+
+        // Scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.case-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+  </html>
