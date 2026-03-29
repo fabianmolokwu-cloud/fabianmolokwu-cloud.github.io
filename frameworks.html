@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks | Fabian Molokwu - Revenue Architect</title>
+    <meta name="description" content="Proprietary frameworks: PAS Protocol, BAB Framework, 4Qs Qualification, AIDA Sequence, 72-Hour Nurture System, and GEO/AEO Discovery Protocol.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.5;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Gradient Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #00ff9d, transparent);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #00cc7a, transparent);
+            bottom: -300px;
+            right: -200px;
+            animation-delay: 5s;
+            opacity: 0.3;
+        }
+
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #00ff9d, #00aa55);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 10s;
+            opacity: 0.15;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(0, 255, 157, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 15s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand .brand-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .brand-accent {
+            color: #00ff9d;
+            margin-left: 4px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #00ff9d;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff9d;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: #00ff9d;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #00ff9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            color: #aaa;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Frameworks Grid */
+        .frameworks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .framework-card {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .framework-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .framework-card:hover::before {
+            left: 100%;
+        }
+
+        .framework-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 255, 157, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 157, 0.1);
+        }
+
+        /* Framework Image */
+        .framework-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.1), rgba(0, 100, 100, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 255, 157, 0.2);
+        }
+
+        .framework-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .framework-card:hover .framework-image img {
+            transform: scale(1.05);
+        }
+
+        /* Fallback icon if image missing */
+        .image-fallback {
+            font-size: 4rem;
+            color: #00ff9d;
+            opacity: 0.6;
+        }
+
+        .framework-number {
+            font-size: 0.7rem;
+            color: #00ff9d;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .framework-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .framework-subtitle {
+            font-size: 0.85rem;
+            color: #00ff9d;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .framework-description {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .framework-description p {
+            margin-bottom: 0.75rem;
+        }
+
+        .framework-steps {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+        }
+
+        .framework-steps li {
+            margin-bottom: 0.5rem;
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+
+        .framework-steps li strong {
+            color: #00ff9d;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.05), rgba(0, 100, 100, 0.05));
+            border-left: 3px solid #00ff9d;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            font-style: italic;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 255, 157, 0.1);
+            border-color: #00ff9d;
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            background: rgba(5, 5, 5, 0.8);
+            border-top: 1px solid rgba(0, 255, 157, 0.1);
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00ff9d;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .frameworks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(12px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 6rem 0 2rem;
+            }
+            
+            .framework-card h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <span class="brand-name">MOLOKWU<span class="brand-accent">FABIAN</span></span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#strategy" class="nav-link">Strategy</a></li>
+                <li><a href="index.html#systems" class="nav-link">Systems</a></li>
+                <li><a href="case-study.html" class="nav-link">Case Studies</a></li>
+                <li><a href="frameworks.html" class="nav-link" style="color: #00ff9d;">Frameworks</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-cogs"></i> PROPRIETARY METHODOLOGIES
+            </div>
+            <h1>The Architect's Toolkit</h1>
+            <p class="hero-subtitle">Six proprietary frameworks that power deterministic revenue growth.</p>
+        </div>
+    </section>
+
+    <!-- Frameworks Grid -->
+    <div class="container">
+        <div class="frameworks-grid">
+            
+            <!-- Framework 01: PAS Protocol -->
+            <div class="framework-card">
+                <div class="framework-number">01</div>
+                <div class="framework-image">
+                    <img src="icon.jpg" alt="PAS Protocol Framework" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-stethoscope\'></i></div>'">
+                </div>
+                <h2>PAS Protocol</h2>
+                <div class="framework-subtitle">The Diagnostic Engine</div>
+                <div class="framework-description">
+                    <p>Most marketing fails because it offers a solution to a problem the prospect hasn't felt yet. I use PAS as a psychological diagnostic tool.</p>
+                    <ul class="framework-steps">
+                        <li><strong>Problem:</strong> Identify the "Leaky Pipe"—the specific point of revenue loss or operational friction.</li>
+                        <li><strong>Agitation:</strong> Quantify the pain. I don't just say "you're losing leads"; I show the cost of lead decay over 72 hours.</li>
+                        <li><strong>Solution:</strong> Introduce the system (not the person) as the only logical resolution.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Framework 02: BAB Framework -->
+            <div class="framework-card">
+                <div class="framework-number">02</div>
+                <div class="framework-image">
+                    <img src="icon2.jpg" alt="BAB Framework" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-chart-line\'></i></div>'">
+                </div>
+                <h2>BAB Framework</h2>
+                <div class="framework-subtitle">The Transformation Logic</div>
+                <div class="framework-description">
+                    <p>This is my primary framework for B2B Medical SaaS. High-level practitioners don't buy features; they buy a different reality.</p>
+                    <ul class="framework-steps">
+                        <li><strong>Before:</strong> The "Burnout" state. Manual charting, 14-hour follow-up lag, insecure data handling.</li>
+                        <li><strong>After:</strong> The "Architected" state. High-margin patients flowing through secure, automated pipelines.</li>
+                        <li><strong>Bridge:</strong> The specific technical system—be it an AI Scribe or a Nurture Engine—that makes the transition inevitable.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Framework 03: 4Qs Framework -->
+            <div class="framework-card">
+                <div class="framework-number">03</div>
+                <div class="framework-image">
+                    <img src="icon3.jpg" alt="4Qs Framework" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-filter\'></i></div>'">
+                </div>
+                <h2>4Qs Framework</h2>
+                <div class="framework-subtitle">The Zero-Trust Lead Gate</div>
+                <div class="framework-description">
+                    <p>In specialized healthcare, a "lead" is a liability until it is qualified. I filter every inquiry through the 4Qs:</p>
+                    <ul class="framework-steps">
+                        <li><strong>Question of Intent:</strong> Is this a "browser" or a "buyer"?</li>
+                        <li><strong>Question of Authority:</strong> Is the decision-maker in the funnel?</li>
+                        <li><strong>Question of Need:</strong> Does the specific clinical/technical pain match the solution?</li>
+                        <li><strong>Question of Urgency:</strong> Is the "Lead Heat" high enough to initiate the 72-hour protocol?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Framework 04: AIDA Sequence -->
+            <div class="framework-card">
+                <div class="framework-number">04</div>
+                <div class="framework-image">
+                    <img src="icon4.jpg" alt="AIDA Sequence" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-pen-fancy\'></i></div>'">
+                </div>
+                <h2>AIDA Sequence</h2>
+                <div class="framework-subtitle">The Written-First Journey</div>
+                <div class="framework-description">
+                    <p>While others rely on flashy video, I use AIDA to build high-gravity written content.</p>
+                    <ul class="framework-steps">
+                        <li><strong>Attention:</strong> GEO/AEO-optimized headlines that AI Answer Engines cite as authority.</li>
+                        <li><strong>Interest:</strong> Deep technical value that solves a micro-problem immediately.</li>
+                        <li><strong>Desire:</strong> A psychological "Must-Have" by showing deterministic ROI of my systems.</li>
+                        <li><strong>Action:</strong> A friction-less, Secure Intake call to action.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Framework 05: 72-Hour Nurture System -->
+            <div class="framework-card">
+                <div class="framework-number">05</div>
+                <div class="framework-image">
+                    <img src="icon5.jpg" alt="72-Hour Nurture System" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-hourglass-half\'></i></div>'">
+                </div>
+                <h2>72-Hour Nurture System</h2>
+                <div class="framework-subtitle">The Conversion Velocity Engine</div>
+                <div class="framework-description">
+                    <p>This is my signature operational framework. Based on the biological reality of "Interest Decay."</p>
+                    <ul class="framework-steps">
+                        <li><strong>The Golden Window:</strong> Lead conversion probability drops by 10x after the first hour.</li>
+                        <li><strong>The System:</strong> Multi-channel (Email/SMS/Web) sequence deploying PAS and BAB copy at precise intervals during the first 3 days.</li>
+                        <li><strong>The Goal:</strong> Move a prospect from "Inquiry" to "Booked Appointment" before the psychological heat of the problem cools down.</li>
+                    </ul>
+                    <div class="quote-block">
+                        <i class="fas fa-clock" style="color: #00ff9d; margin-right: 8px;"></i> 
+                        "The first 72 hours determine the next 72 months of revenue."
+                    </div>
+                </div>
+            </div>
+
+            <!-- Framework 06: GEO/AEO -->
+            <div class="framework-card">
+                <div class="framework-number">06</div>
+                <div class="framework-image">
+                    <img src="icon6.jpg" alt="GEO/AEO Framework" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-robot\'></i></div>'">
+                </div>
+                <h2>GEO/AEO</h2>
+                <div class="framework-subtitle">The Discovery Protocol</div>
+                <div class="framework-description">
+                    <p>Traditional SEO is reactive; GEO/AEO is predictive.</p>
+                    <ul class="framework-steps">
+                        <li><strong>Generative Engine Optimization:</strong> Optimize technical data so LLMs (Gemini, Perplexity, ChatGPT) recognize you as the Primary Cited Source.</li>
+                        <li><strong>Answer Engine Optimization:</strong> Instead of ranking for a keyword, we rank as the "Answer" to complex, intent-driven questions asked by your ideal B2B clients.</li>
+                    </ul>
+                    <div class="quote-block">
+                        <i class="fas fa-brain" style="color: #00ff9d; margin-right: 8px;"></i> 
+                        "Don't rank for keywords — become the cited source for AI answers."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="back-home">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 Fabian Molokwu // Systems Logic // Built on GitHub</p>
+                <div class="footer-links">
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#strategy">Strategy</a>
+                    <a href="index.html#systems">Systems</a>
+                    <a href="case-study.html">Case Studies</a>
+                    <a href="frameworks.html">Frameworks</a>
+                    <a href="index.html#faq">FAQ</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = navToggle.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (particlesContainer) {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    const size = Math.random() * 4 + 1;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDuration = Math.random() * 20 + 10 + 's';
+                    particle.style.animationDelay = Math.random() * 10 + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
+        }
+        createParticles();
+
+        // Scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.framework-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+  </html>
