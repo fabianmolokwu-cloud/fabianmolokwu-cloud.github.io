@@ -4,25 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Initiate the Revenue Architecture protocol. Secure intake gate for high-margin patient pipelines and B2B SaaS growth systems.">
-    <title>Initiate Protocol | Fabian Molokwu — Revenue Architect</title>
+    <meta name="keywords" content="Initiate Protocol, Revenue Architecture Intake, Zero-Trust Lead Generation, Secure Intake Gate, 72-Hour Nurture Activation">
+    <title>Initiate Protocol | Fabian Molokwu — Revenue Architect // Secure Intake Gate</title>
     
+    <!-- JSON-LD Schema for AEO Authority -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Revenue Architecture Intake Protocol",
-      "description": "Secure intake gate for initiating Zero-Trust Demand Systems.",
-      "provider": { "@type": "ProfessionalService", "name": "Fabian Molokwu - Revenue Architect" }
+      "description": "Secure intake gate for initiating Zero-Trust Demand Systems. Submit your credentials to activate the 72-Hour Nurture Engine and AEO/GEO optimization.",
+      "provider": { 
+        "@type": "ProfessionalService", 
+        "name": "Fabian Molokwu - Revenue Architect",
+        "url": "https://revenue-architect.com"
+      },
+      "serviceType": "Revenue Architecture Deployment",
+      "areaServed": "Global"
     }
     </script>
+    
+    <!-- Cloudflare Turnstile Script - Using your custom key -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --accent-glow: #00ff9d; --font-mono: 'JetBrains Mono', monospace; }
-        body { background: #010101; background-image: radial-gradient(rgba(0,255,157,0.03) 1px, transparent 1px); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; font-family: var(--font-mono); }
+        body { background: #010101; background-image: radial-gradient(rgba(0,255,157,0.03) 1px, transparent 1px); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; font-family: var(--font-mono); position: relative; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, rgba(0,255,157,0.02) 0px, rgba(0,255,157,0.02) 2px, transparent 2px, transparent 6px); pointer-events: none; z-index: 10; }
+        
+        /* Navigation */
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(1,1,1,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,255,157,0.2); padding: 0.75rem 2rem; }
         .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         .logo { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--accent-glow); text-decoration: none; }
@@ -32,36 +45,55 @@
         .nav-links a:hover, .nav-links a.active { color: var(--accent-glow); }
         .nav-cta { border: 1px solid var(--accent-glow); padding: 0.5rem 1.2rem; border-radius: 4px; background: var(--accent-glow); color: #000 !important; }
         .menu-toggle { display: none; font-size: 1.5rem; color: var(--accent-glow); cursor: pointer; background: none; border: none; }
-        .view-container { width: 100%; max-width: 680px; margin-top: 80px; }
+        
+        /* Terminal Container */
+        .view-container { width: 100%; max-width: 720px; margin-top: 80px; }
         .terminal-container { background: #050505; border: 2px solid #00ff9d; box-shadow: 0 0 30px rgba(0,255,157,0.25); width: 100%; }
-        .terminal-header { background: #00ff9d; color: #000; padding: 10px 20px; font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; gap: 12px; }
+        .terminal-header { background: #00ff9d; color: #000; padding: 10px 20px; font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); }
         .status-dot { width: 10px; height: 10px; background: #00ff9d; border-radius: 50%; box-shadow: 0 0 8px #00ff9d; animation: pulseDot 1.5s infinite; }
         @keyframes pulseDot { 0%,100%{opacity:1;} 50%{opacity:0.6;} }
         .terminal-body { padding: 2rem; }
+        
+        /* Form Fields */
         .field { margin-bottom: 1.5rem; }
-        .field label { display: block; color: #00ff9d; font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; }
-        .field input, .field select, .field textarea { width: 100%; background: #0a0a0a; border: 1px solid #2a2a2a; color: #e0e0e0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0.85rem; outline: none; }
-        .field input:focus, .field select:focus, .field textarea:focus { border-color: #00ff9d; box-shadow: 0 0 12px rgba(0,255,157,0.2); }
+        .field label { display: block; color: #00ff9d; font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; font-weight: 600; }
+        .field input, .field select, .field textarea { width: 100%; background: #0a0a0a; border: 1px solid #2a2a2a; color: #e0e0e0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0.85rem; outline: none; transition: all 0.2s; }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: #00ff9d; box-shadow: 0 0 12px rgba(0,255,157,0.2); background: #0f0f0f; }
         .initiate-btn { width: 100%; background: transparent; border: 1.5px solid #00ff9d; color: #00ff9d; padding: 14px; font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 0.5rem; }
-        .initiate-btn:hover:not(:disabled) { background: #00ff9d; color: #000; box-shadow: 0 0 28px #00ff9d; }
-        .initiate-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .initiate-btn:hover:not(:disabled) { background: #00ff9d; color: #000; box-shadow: 0 0 28px #00ff9d; transform: translateY(-2px); }
+        .initiate-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+        
+        /* Turnstile Container */
+        .turnstile-container { margin: 1.2rem 0; display: flex; justify-content: center; }
+        
+        /* Loading Animation */
         .loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000000f0; backdrop-filter: blur(8px); z-index: 2000; display: flex; align-items: center; justify-content: center; }
-        .decrypt-box { border: 1px solid #00ff9d; padding: 2rem; background: #030303; text-align: center; max-width: 500px; width: 90%; }
+        .decrypt-box { border: 1px solid #00ff9d; padding: 2rem; background: #030303; text-align: center; max-width: 500px; width: 90%; box-shadow: 0 0 40px rgba(0,255,157,0.2); }
         .decrypt-progress { width: 100%; height: 3px; background: #1a2a1a; margin: 1.5rem 0; overflow: hidden; }
         .decrypt-bar { width: 0%; height: 100%; background: #00ff9d; transition: width 0.1s linear; }
+        
+        /* Success Screen */
         .success-screen { background: #050505; border: 2px solid #00ff9d; padding: 2.5rem 2rem; text-align: center; animation: fadeIn 0.5s; }
-        .success-title { font-size: clamp(1.5rem,6vw,2.2rem); font-weight: 800; color: #fff; text-shadow: 2px 2px 0px #ff0055, -1px -1px 0px #00ff9d; margin-bottom: 1.5rem; }
-        .data-dump { color: #00ff9d; font-size: 0.8rem; margin: 1.5rem 0; line-height: 1.8; text-align: left; background: #0a0a0a; padding: 1.2rem; border-left: 3px solid #00ff9d; }
+        .success-title { font-size: clamp(1.5rem,6vw,2.2rem); font-weight: 800; color: #fff; text-shadow: 2px 2px 0px #ff0055, -1px -1px 0px #00ff9d; margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .data-dump { color: #00ff9d; font-size: 0.8rem; margin: 1.5rem 0; line-height: 1.8; text-align: left; background: #0a0a0a; padding: 1.2rem; border-left: 3px solid #00ff9d; font-family: var(--font-mono); }
         .progress-bar-container { width: 100%; height: 6px; background: #1f2a1f; margin: 1.5rem 0; overflow: hidden; }
         .progress-fill { width: 0%; height: 100%; background: #00ff9d; animation: fillProgress 1.5s ease-out forwards; }
         @keyframes fillProgress { to { width: 100%; } }
         .back-btn { background: transparent; border: 1.5px solid #00ff9d; color: #00ff9d; padding: 12px 28px; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 1rem; }
-        .back-btn:hover { background: #00ff9d; color: #000; box-shadow: 0 0 20px #00ff9d; }
+        .back-btn:hover { background: #00ff9d; color: #000; box-shadow: 0 0 20px #00ff9d; transform: translateY(-2px); }
         .hidden { display: none; }
         .field-error { border-color: #ff0055 !important; animation: shake 0.3s; }
         @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { body { padding: 1rem; } .menu-toggle { display: block; } .nav-links { display: none; width: 100%; flex-direction: column; gap: 1rem; padding: 1rem 0; margin-top: 1rem; border-top: 1px solid rgba(0,255,157,0.2); } .nav-links.show { display: flex; } .terminal-body { padding: 1.5rem; } }
+        
+        @media (max-width: 768px) { 
+            body { padding: 1rem; } 
+            .menu-toggle { display: block; } 
+            .nav-links { display: none; width: 100%; flex-direction: column; gap: 1rem; padding: 1rem 0; margin-top: 1rem; border-top: 1px solid rgba(0,255,157,0.2); } 
+            .nav-links.show { display: flex; } 
+            .terminal-body { padding: 1.5rem; }
+            .turnstile-container { transform: scale(0.85); }
+        }
     </style>
 </head>
 <body>
@@ -79,45 +111,119 @@
     </nav>
 
     <div class="view-container" id="appContainer">
+        <!-- Terminal Intake Form -->
         <div id="terminalView">
             <div class="terminal-container">
-                <div class="terminal-header"><span class="status-dot"></span> [SYSTEM-ID: REVENUE-ARCHITECT-01] // SECURE ACCESS PORTAL</div>
+                <div class="terminal-header">
+                    <span class="status-dot"></span> [SYSTEM-ID: REVENUE-ARCHITECT-01] // SECURE ACCESS PORTAL v2.0.6
+                </div>
                 <div class="terminal-body">
+                    <p style="color:#00ff9d; font-size:0.8rem; margin-bottom:1.5rem; border-left:2px solid #00ff9d; padding-left:0.8rem;">
+                        <i class="fas fa-lock"></i> ZERO-TRUST INTAKE GATE // TURNSTILE PROTECTED
+                    </p>
+                    
                     <form id="protocol-form">
-                        <div class="field"><label>LOG_IDENTITY:</label><input type="text" id="fullName" name="name" placeholder="FULL_NAME" required></div>
-                        <div class="field"><label>LOG_COMMUNICATION:</label><input type="email" id="email" name="email" placeholder="CORPORATE_EMAIL" required></div>
-                        <div class="field"><label>TARGET_VERTICAL:</label><select id="vertical" name="vertical"><option value="B2B_SAAS">B2B_SAAS_ARCHITECTURE</option><option value="CLINICAL">HIGH_MARGIN_SURGICAL</option></select></div>
-                        <div class="field"><label>SYSTEM_VULNERABILITY:</label><textarea id="vulnerability" name="message" rows="2" placeholder="DESCRIBE_LEAD_DECAY_SYMPTOMS"></textarea></div>
-                        <button type="submit" class="initiate-btn" id="executeBtn">[ EXECUTE_PROTOCOL ]</button>
+                        <div class="field">
+                            <label><i class="fas fa-user"></i> LOG_IDENTITY:</label>
+                            <input type="text" id="fullName" name="name" placeholder="FULL_NAME / CLINIC_PRINCIPAL" required autocomplete="off">
+                        </div>
+                        <div class="field">
+                            <label><i class="fas fa-envelope"></i> LOG_COMMUNICATION:</label>
+                            <input type="email" id="email" name="email" placeholder="CORPORATE_EMAIL (ENCRYPTED)" required autocomplete="off">
+                        </div>
+                        <div class="field">
+                            <label><i class="fas fa-chart-line"></i> TARGET_VERTICAL:</label>
+                            <select id="vertical" name="vertical" required>
+                                <option value="B2B_SAAS_ARCHITECTURE">B2B_SAAS_ARCHITECTURE</option>
+                                <option value="HIGH_MARGIN_SURGICAL">HIGH_MARGIN_SURGICAL / CLINICAL</option>
+                                <option value="HYBRID_CLINIC_TECH">HYBRID_CLINIC_TECH</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label><i class="fas fa-bug"></i> SYSTEM_VULNERABILITY:</label>
+                            <textarea id="vulnerability" name="message" rows="2" placeholder="DESCRIBE_LEAD_DECAY_SYMPTOMS // PAIN_POINTS_IN_PIPELINE"></textarea>
+                        </div>
+                        
+                        <!-- Cloudflare Turnstile with your custom key -->
+                        <div class="turnstile-container">
+                            <div class="cf-turnstile" data-sitekey="Kaycee45" data-theme="dark" data-callback="onTurnstileSuccess"></div>
+                        </div>
+                        
+                        <button type="submit" class="initiate-btn" id="executeBtn">
+                            [ EXECUTE_PROTOCOL ]
+                        </button>
                     </form>
+                    
+                    <p style="color:#444; font-size:0.6rem; text-align:center; margin-top:1rem; font-family:monospace;">
+                        <i class="fas fa-shield-haltered"></i> SECURE PROTOCOL // ENCRYPTED CHANNEL // TURNSTILE VERIFIED
+                    </p>
                 </div>
             </div>
         </div>
+        
+        <!-- Success Screen -->
         <div id="successView" class="hidden">
             <div class="success-screen">
-                <h1 class="success-title">PROTOCOL SUCCESSFUL</h1>
-                <div class="data-dump" id="dataDump"><p>> HANDSHAKE ESTABLISHED</p><p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p><p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p></div>
-                <div class="progress-bar-container"><div class="progress-fill"></div></div>
-                <button class="back-btn" id="returnToBaseBtn">[ RETURN_TO_BASE ]</button>
+                <div class="glitch-container">
+                    <h1 class="success-title">PROTOCOL SUCCESSFUL</h1>
+                </div>
+                <div class="data-dump" id="dataDump">
+                    <p>> HANDSHAKE ESTABLISHED</p>
+                    <p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p>
+                    <p>> ZERO-TRUST INTAKE: DEPLOYED</p>
+                    <p>> SECURE CHANNEL: ACTIVE</p>
+                    <p>> EXPECT FIRST DATA PACKET IN &lt; 4 HOURS</p>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-fill"></div>
+                </div>
+                <button class="back-btn" id="returnToBaseBtn">
+                    [ RETURN_TO_BASE ]
+                </button>
             </div>
         </div>
     </div>
 
     <script>
+        // DOM Elements
         const terminalView = document.getElementById('terminalView');
         const successView = document.getElementById('successView');
         const form = document.getElementById('protocol-form');
         const executeBtn = document.getElementById('executeBtn');
-
+        const fullNameInput = document.getElementById('fullName');
+        const emailInput = document.getElementById('email');
+        
+        let turnstileResolved = false;
+        let submittedData = {};
+        
+        // Turnstile success callback
+        window.onTurnstileSuccess = function(token) {
+            turnstileResolved = true;
+            console.log('[SYSTEM] Turnstile verification complete');
+        };
+        
+        // Decrypt Animation
         function showDecryptAnimation() {
             return new Promise((resolve) => {
                 let overlay = document.createElement('div');
                 overlay.className = 'loading-overlay';
-                overlay.innerHTML = `<div class="decrypt-box"><div style="color:#00ff9d;margin-bottom:1rem;">⚡ PROTOCOL_AUTHENTICATION</div><div class="decrypt-progress"><div class="decrypt-bar" id="decryptBar"></div></div><div id="decryptMsg" style="color:#00ff9d;font-size:0.8rem;">HANDSHAKE_INITIATED...</div></div>`;
+                overlay.innerHTML = `
+                    <div class="decrypt-box">
+                        <div style="color:#00ff9d;margin-bottom:1rem;font-size:1.2rem;">
+                            <i class="fas fa-microchip"></i> PROTOCOL_AUTHENTICATION
+                        </div>
+                        <div class="decrypt-progress">
+                            <div class="decrypt-bar" id="decryptBar"></div>
+                        </div>
+                        <div id="decryptMsg" style="color:#00ff9d;font-size:0.8rem;">HANDSHAKE_INITIATED...</div>
+                    </div>
+                `;
                 document.body.appendChild(overlay);
+                
                 let progress = 0;
                 let bar = overlay.querySelector('#decryptBar');
                 let msg = overlay.querySelector('#decryptMsg');
+                
                 let interval = setInterval(() => {
                     progress += Math.random() * 15 + 5;
                     if (progress >= 100) {
@@ -127,38 +233,74 @@
                         setTimeout(() => { overlay.remove(); resolve(); }, 600);
                     } else {
                         bar.style.width = progress + '%';
-                        if (progress > 50) msg.innerHTML = 'ENCRYPTING_DATA_STREAMS...';
+                        if (progress > 25) msg.innerHTML = 'ENCRYPTING_DATA_STREAMS...';
+                        if (progress > 50) msg.innerHTML = 'VALIDATING_CREDENTIALS...';
+                        if (progress > 75) msg.innerHTML = 'DEPLOYING_NURTURE_ENGINE...';
                     }
-                }, 90);
+                }, 85);
             });
         }
-
+        
+        // Terminal Error Notification
         function showTerminalError(msg) {
             let div = document.createElement('div');
-            div.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#ff0055;color:#fff;padding:10px 20px;font-family:monospace;font-size:0.75rem;z-index:3000;border-radius:4px;';
-            div.innerHTML = `⚠️ ${msg}`;
+            div.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#ff0055;color:#fff;padding:12px 24px;font-family:monospace;font-size:0.75rem;z-index:3000;border-radius:4px;border-left:3px solid #00ff9d;';
+            div.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${msg}`;
             document.body.appendChild(div);
-            setTimeout(() => div.remove(), 3000);
+            setTimeout(() => {
+                div.style.opacity = '0';
+                setTimeout(() => div.remove(), 500);
+            }, 4000);
         }
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            let name = document.getElementById('fullName').value.trim();
-            let email = document.getElementById('email').value.trim();
+        
+        // Form Validation
+        function validateForm() {
+            let name = fullNameInput.value.trim();
+            let email = emailInput.value.trim();
             
-            if (!name) { showTerminalError("LOG_IDENTITY required"); return; }
-            if (!email || !email.includes('@')) { showTerminalError("Valid LOG_COMMUNICATION required"); return; }
+            fullNameInput.classList.remove('field-error');
+            emailInput.classList.remove('field-error');
             
-            executeBtn.disabled = true;
-            executeBtn.textContent = '[ PROCESSING... ]';
+            if (!name) {
+                fullNameInput.classList.add('field-error');
+                showTerminalError("ERROR: LOG_IDENTITY field required.");
+                fullNameInput.focus();
+                return false;
+            }
             
-            // Prepare form data
+            if (!email) {
+                emailInput.classList.add('field-error');
+                showTerminalError("ERROR: LOG_COMMUNICATION field required.");
+                emailInput.focus();
+                return false;
+            }
+            
+            if (!email.includes('@') || !email.includes('.')) {
+                emailInput.classList.add('field-error');
+                showTerminalError("ERROR: Invalid email format. Use valid corporate domain.");
+                emailInput.focus();
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Submit to Formspree with Turnstile Token
+        async function submitToFormspree() {
+            const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+            
+            if (!turnstileToken) {
+                showTerminalError("SECURITY VERIFICATION: Please wait for bot check to complete.");
+                return false;
+            }
+            
             const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('vertical', document.getElementById('vertical').value);
-            formData.append('message', document.getElementById('vulnerability').value || 'Standard pipeline optimization required');
+            formData.append('name', submittedData.name);
+            formData.append('email', submittedData.email);
+            formData.append('vertical', submittedData.vertical);
+            formData.append('message', submittedData.message);
             formData.append('_subject', 'New Protocol Initiation - Revenue Architect');
+            formData.append('cf-turnstile-response', turnstileToken);
             
             try {
                 const response = await fetch('https://formspree.io/f/xbdpgrwr', {
@@ -169,45 +311,94 @@
                 
                 if (response.ok) {
                     await showDecryptAnimation();
-                    terminalView.classList.add('hidden');
-                    successView.classList.remove('hidden');
                     
-                    let dataDiv = document.getElementById('dataDump');
-                    if (dataDiv) {
-                        dataDiv.innerHTML = `
-                            <p>> IDENTITY: ${name.toUpperCase()}</p>
-                            <p>> COMMUNICATION: ${email.replace(/(.{2})(.*)(@)/, '$1***$3')}</p>
+                    const dataDump = document.getElementById('dataDump');
+                    if (dataDump) {
+                        const timestamp = new Date().toLocaleTimeString();
+                        dataDump.innerHTML = `
+                            <p>> IDENTITY: ${submittedData.name.toUpperCase()}</p>
+                            <p>> COMMUNICATION: ${submittedData.email.replace(/(.{2})(.*)(@)/, '$1***$3')}</p>
+                            <p>> TARGET VERTICAL: ${submittedData.vertical}</p>
                             <p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p>
                             <p>> ZERO-TRUST INTAKE: DEPLOYED</p>
-                            <p>> SECURE HANDSHAKE: ESTABLISHED</p>
-                            <p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p>
+                            <p>> TURNSTILE VERIFICATION: COMPLETE</p>
+                            <p>> SECURE HANDSHAKE: ESTABLISHED @ ${timestamp}</p>
+                            <p>> EXPECT FIRST DATA PACKET IN &lt; 4 HOURS</p>
                         `;
                     }
+                    
+                    terminalView.classList.add('hidden');
+                    successView.classList.remove('hidden');
+                    return true;
                 } else {
-                    const errorData = await response.json();
-                    showTerminalError("Submission failed: " + (errorData.error || "Please try again"));
-                    executeBtn.disabled = false;
-                    executeBtn.textContent = '[ EXECUTE_PROTOCOL ]';
+                    const errorText = await response.text();
+                    console.error('Formspree error:', errorText);
+                    showTerminalError("Submission failed. Please verify your information and try again.");
+                    return false;
                 }
             } catch(err) {
-                console.error('Formspree error:', err);
-                showTerminalError("Network error. Please check your connection and try again.");
+                console.error('Network error:', err);
+                showTerminalError("NETWORK ERROR: Unable to reach secure gateway. Please check your connection.");
+                return false;
+            }
+        }
+        
+        // Form Submit Handler
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            if (!validateForm()) return;
+            
+            // Check if Turnstile is resolved
+            if (!turnstileResolved && !document.querySelector('[name="cf-turnstile-response"]')?.value) {
+                showTerminalError("SECURITY CHECK: Please complete the verification (it's invisible - just wait a moment).");
+                return;
+            }
+            
+            submittedData = {
+                name: fullNameInput.value.trim(),
+                email: emailInput.value.trim(),
+                vertical: document.getElementById('vertical').options[document.getElementById('vertical').selectedIndex]?.text || document.getElementById('vertical').value,
+                message: document.getElementById('vulnerability').value.trim() || "Standard pipeline optimization required"
+            };
+            
+            executeBtn.disabled = true;
+            executeBtn.textContent = '[ PROCESSING... ]';
+            
+            const success = await submitToFormspree();
+            
+            if (!success) {
                 executeBtn.disabled = false;
                 executeBtn.textContent = '[ EXECUTE_PROTOCOL ]';
             }
         });
-
+        
+        // Return to Base Button
         document.getElementById('returnToBaseBtn')?.addEventListener('click', () => {
             successView.classList.add('hidden');
             terminalView.classList.remove('hidden');
             form.reset();
             executeBtn.disabled = false;
             executeBtn.textContent = '[ EXECUTE_PROTOCOL ]';
+            turnstileResolved = false;
+            fullNameInput.focus();
+            
+            // Reset Turnstile widget if needed
+            if (typeof turnstile !== 'undefined') {
+                const widgetId = document.querySelector('.cf-turnstile')?.getAttribute('data-widget-id');
+                if (widgetId) turnstile.reset(widgetId);
+            }
         });
-
+        
+        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         if(menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+        
+        // Auto-focus on first field
+        setTimeout(() => fullNameInput.focus(), 300);
+        
+        console.log('[SYSTEM] Protocol Initiation Page Loaded | Turnstile Key: Kaycee45 | Formspree Endpoint Active');
     </script>
 </body>
     </html>
