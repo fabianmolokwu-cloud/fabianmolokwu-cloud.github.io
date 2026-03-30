@@ -1,801 +1,115 @@
+<!-- initiate.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Intake Portal | Fabian Molokwu - Revenue Architect</title>
-    <meta name="description" content="Initiate System Audit & Protocol. Secure intake gate for clinics and SaaS firms ready to architect predictable, high-margin revenue pipelines.">
-    <meta name="robots" content="noindex, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Initiate the Revenue Architecture protocol. Secure intake gate for high-margin patient pipelines and B2B SaaS growth systems.">
+    <meta name="keywords" content="Initiate Protocol, Revenue Architecture Intake, Zero-Trust Lead Generation, Secure Intake Gate, 72-Hour Nurture Activation">
+    <title>Initiate Protocol | Fabian Molokwu — Revenue Architect // Secure Intake Gate</title>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Revenue Architecture Intake Protocol",
+      "description": "Secure intake gate for initiating Zero-Trust Demand Systems. Submit your credentials to activate the 72-Hour Nurture Engine and AEO/GEO optimization.",
+      "provider": { "@type": "ProfessionalService", "name": "Fabian Molokwu - Revenue Architect" },
+      "areaServed": "Global",
+      "serviceType": "Revenue Architecture Deployment"
+    }
+    </script>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.5;
-            min-height: 100vh;
-        }
-
-        /* Animated Background */
-        .gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, #00ff9d, transparent);
-            top: -200px;
-            left: -200px;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, #00cc7a, transparent);
-            bottom: -300px;
-            right: -200px;
-            animation-delay: 5s;
-            opacity: 0.3;
-        }
-
-        .orb-3 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, #00ff9d, #00aa55);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: 10s;
-            opacity: 0.15;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(0, 255, 157, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: particleFloat 15s infinite linear;
-        }
-
-        @keyframes particleFloat {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.5; }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand .brand-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .brand-accent {
-            color: #00ff9d;
-            margin-left: 4px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #a0a0a0;
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #00ff9d;
-        }
-
-        .nav-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #ffffff;
-        }
-
-        /* Main Form Card */
-        .form-card {
-            background: rgba(10, 10, 10, 0.75);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 255, 157, 0.2);
-            border-radius: 32px;
-            padding: 3rem;
-            margin-top: 5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Header Section */
-        .form-header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .secure-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(0, 255, 157, 0.1);
-            border: 1px solid rgba(0, 255, 157, 0.3);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            color: #00ff9d;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-header h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, #00ff9d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .form-header p {
-            color: #aaa;
-            font-size: 0.95rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* Form Sections */
-        .form-section {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-number {
-            width: 32px;
-            height: 32px;
-            background: rgba(0, 255, 157, 0.15);
-            border: 1px solid rgba(0, 255, 157, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #00ff9d;
-        }
-
-        .section-title h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .section-title p {
-            font-size: 0.75rem;
-            color: #666;
-            margin-left: auto;
-        }
-
-        /* Form Groups */
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: #ccc;
-        }
-
-        label .required {
-            color: #00ff9d;
-            margin-left: 2px;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: #ffffff;
-            font-family: inherit;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-bottom: 2px solid #00ff9d;
-            border-radius: 12px 12px 4px 4px;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        select {
-            cursor: pointer;
-        }
-
-        select option {
-            background: #0a0a0a;
-        }
-
-        /* Checkbox Group */
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .checkbox-item:hover {
-            border-color: rgba(0, 255, 157, 0.3);
-            background: rgba(0, 255, 157, 0.05);
-        }
-
-        .checkbox-item input {
-            width: auto;
-            margin-right: 0.5rem;
-            accent-color: #00ff9d;
-        }
-
-        .checkbox-item label {
-            margin-bottom: 0;
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-
-        /* Row Layout */
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        /* Submit Button */
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #00ff9d, #00cc7a);
-            border: none;
-            border-radius: 50px;
-            color: #0a0a0a;
-            font-size: 1rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-            box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
-        }
-
-        /* Micro-copy */
-        .micro-copy {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 0.75rem;
-            color: #666;
-        }
-
-        .micro-copy i {
-            color: #00ff9d;
-            margin-right: 4px;
-        }
-
-        /* Trust Signals Footer */
-        .trust-footer {
-            background: rgba(0, 255, 157, 0.03);
-            border: 1px solid rgba(0, 255, 157, 0.1);
-            border-radius: 20px;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .trust-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .trust-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 255, 157, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #00ff9d;
-            font-size: 1.2rem;
-        }
-
-        .trust-text {
-            flex: 1;
-        }
-
-        .trust-text strong {
-            font-size: 0.85rem;
-            color: #00ff9d;
-        }
-
-        .trust-text p {
-            font-size: 0.75rem;
-            color: #888;
-        }
-
-        .system-status {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            background: #00ff9d;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-            box-shadow: 0 0 5px #00ff9d;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: #666;
-            font-size: 0.75rem;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .form-card {
-                padding: 1.5rem;
-                margin-top: 4rem;
-            }
-            
-            .form-header h1 {
-                font-size: 1.6rem;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-            
-            .checkbox-group {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(12px);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                padding: 2rem;
-                gap: 1.5rem;
-            }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-toggle {
-                display: block;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --accent-glow: #00ff9d; --terminal-black: #0a0a0a; --font-mono: 'JetBrains Mono', monospace; }
+        body { background: #010101; background-image: radial-gradient(rgba(0,255,157,0.03) 1px, transparent 1px); background-size: 40px 40px; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; font-family: var(--font-mono); position: relative; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, rgba(0,255,157,0.02) 0px, rgba(0,255,157,0.02) 2px, transparent 2px, transparent 6px); pointer-events: none; z-index: 10; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(1,1,1,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,255,157,0.2); padding: 0.75rem 2rem; }
+        .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--accent-glow); text-decoration: none; }
+        .logo i { margin-right: 8px; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+        .nav-links a { color: #ccc; text-decoration: none; font-family: var(--font-mono); font-size: 0.85rem; transition: all 0.3s ease; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-glow); }
+        .nav-cta { border: 1px solid var(--accent-glow); padding: 0.5rem 1.2rem; border-radius: 4px; background: var(--accent-glow); color: #000 !important; }
+        .menu-toggle { display: none; font-size: 1.5rem; color: var(--accent-glow); cursor: pointer; background: none; border: none; }
+        .view-container { width: 100%; max-width: 680px; margin-top: 80px; }
+        .terminal-container { background: #050505; border: 2px solid #00ff9d; box-shadow: 0 0 30px rgba(0,255,157,0.25); border-radius: 0; width: 100%; }
+        .terminal-header { background: #00ff9d; color: #000; padding: 10px 20px; font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; gap: 12px; }
+        .status-dot { width: 10px; height: 10px; background: #00ff9d; border-radius: 50%; box-shadow: 0 0 8px #00ff9d; animation: pulseDot 1.5s infinite; }
+        @keyframes pulseDot { 0%,100%{opacity:1;} 50%{opacity:0.6;} }
+        .terminal-body { padding: 2rem; }
+        .field { margin-bottom: 1.5rem; }
+        .field label { display: block; color: #00ff9d; font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; }
+        .field input, .field select, .field textarea { width: 100%; background: #0a0a0a; border: 1px solid #2a2a2a; color: #e0e0e0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0.85rem; outline: none; }
+        .field input:focus, .field select:focus, .field textarea:focus { border-color: #00ff9d; box-shadow: 0 0 12px rgba(0,255,157,0.2); }
+        .initiate-btn { width: 100%; background: transparent; border: 1.5px solid #00ff9d; color: #00ff9d; padding: 14px; font-family: var(--font-mono); font-weight: 700; font-size: 0.9rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 0.5rem; }
+        .initiate-btn:hover:not(:disabled) { background: #00ff9d; color: #000; box-shadow: 0 0 28px #00ff9d; }
+        .initiate-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000000f0; backdrop-filter: blur(8px); z-index: 2000; display: flex; align-items: center; justify-content: center; }
+        .decrypt-box { border: 1px solid #00ff9d; padding: 2rem; background: #030303; text-align: center; max-width: 500px; width: 90%; }
+        .decrypt-progress { width: 100%; height: 3px; background: #1a2a1a; margin: 1.5rem 0; overflow: hidden; }
+        .decrypt-bar { width: 0%; height: 100%; background: #00ff9d; transition: width 0.1s linear; }
+        .success-screen { background: #050505; border: 2px solid #00ff9d; padding: 2.5rem 2rem; text-align: center; animation: fadeIn 0.5s; }
+        .success-title { font-size: clamp(1.8rem,6vw,2.5rem); font-weight: 800; color: #fff; text-shadow: 3px 3px 0px #ff0055, -2px -2px 0px #00ff9d; margin-bottom: 1.5rem; }
+        .data-dump { color: #00ff9d; font-size: 0.8rem; margin: 1.5rem 0; line-height: 1.8; text-align: left; background: #0a0a0a; padding: 1.2rem; border-left: 3px solid #00ff9d; }
+        .progress-bar-container { width: 100%; height: 6px; background: #1f2a1f; margin: 1.5rem 0; overflow: hidden; }
+        .progress-fill { width: 0%; height: 100%; background: #00ff9d; animation: fillProgress 1.5s ease-out forwards; }
+        @keyframes fillProgress { to { width: 100%; } }
+        .back-btn { background: transparent; border: 1.5px solid #00ff9d; color: #00ff9d; padding: 12px 28px; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; }
+        .back-btn:hover { background: #00ff9d; color: #000; box-shadow: 0 0 20px #00ff9d; }
+        .hidden { display: none; }
+        .field-error { border-color: #ff0055 !important; animation: shake 0.3s; }
+        @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-5px);} 75%{transform:translateX(5px);} }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { body { padding: 1rem; } .menu-toggle { display: block; } .nav-links { display: none; width: 100%; flex-direction: column; gap: 1rem; padding: 1rem 0; margin-top: 1rem; border-top: 1px solid rgba(0,255,157,0.2); } .nav-links.show { display: flex; } .terminal-body { padding: 1.5rem; } }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="gradient-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="particles" id="particles"></div>
-
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" style="text-decoration: none;">
-                <div class="nav-brand">
-                    <span class="brand-name">MOLOKWU<span class="brand-accent">FABIAN</span></span>
-                </div>
-            </a>
-            <div class="nav-links">
-                <a href="index.html#about">About</a>
-                <a href="case-study.html">Case Studies</a>
-                <a href="frameworks.html">Frameworks</a>
-                <a href="index.html#faq">FAQ</a>
-                <a href="initiate.html" style="color: #00ff9d;">Initiate</a>
-            </div>
-            <div class="nav-toggle">
-                <i class="fas fa-bars"></i>
+            <a href="index.html" class="logo"><i class="fas fa-shield-haltered"></i> REVENUE_ARCHITECT</a>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">HOME</a>
+                <a href="case-study.html">CASE STUDIES</a>
+                <a href="frameworks.html">FRAMEWORKS</a>
+                <a href="initiate.html" class="nav-cta">INITIATE PROTOCOL</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Container -->
-    <div class="container">
-        <div class="form-card">
-            <!-- Header -->
-            <div class="form-header">
-                <div class="secure-badge">
-                    <i class="fas fa-lock"></i> SECURE INTAKE GATE
-                </div>
-                <h1>Initiate System Audit & Protocol</h1>
-                <p>This is not a "contact form." This is a secure intake gate for clinics and SaaS firms ready to architect predictable, high-margin revenue pipelines.</p>
-            </div>
-
-            <!-- Form -->
-            <form action="https://formspree.io/f/xbdpgrwr" method="POST" id="intakeForm">
-                
-                <!-- Section 01: Identity & Authority -->
-                <div class="form-section">
-                    <div class="section-title">
-                        <div class="section-number">01</div>
-                        <h3>Identity & Authority</h3>
-                        <p>THE WHO</p>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Legal Entity Name <span class="required">*</span></label>
-                        <input type="text" name="Legal_Entity_Name" placeholder="e.g., Aura Dental Group or MedFlow Solutions" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Decision Maker Role <span class="required">*</span></label>
-                        <select name="Decision_Maker_Role" required>
-                            <option value="">Select role</option>
-                            <option value="Founder/CEO">Founder/CEO</option>
-                            <option value="Clinical Director">Clinical Director</option>
-                            <option value="Head of Growth">Head of Growth</option>
-                            <option value="Operations Manager">Operations Manager</option>
-                            <option value="Practice Administrator">Practice Administrator</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Corporate Email <span class="required">*</span></label>
-                        <input type="email" name="Email" placeholder="name@company.com (No @gmail/@yahoo)" pattern="[^@]+@[^@]+\.[^@]+" title="Please use your corporate email address" required>
-                        <small style="color: #666; font-size: 0.7rem;">No @gmail/@yahoo addresses — B2B authority filter active</small>
-                    </div>
-                </div>
-
-                <!-- Section 02: Diagnostic Data -->
-                <div class="form-section">
-                    <div class="section-title">
-                        <div class="section-number">02</div>
-                        <h3>Diagnostic Data</h3>
-                        <p>THE PROBLEM</p>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Primary Revenue Leak <span class="required">*</span></label>
-                        <select name="Primary_Revenue_Leak" required>
-                            <option value="">Select primary leak point</option>
-                            <option value="Low Lead Volume">Low Lead Volume — Not enough traffic</option>
-                            <option value="High Lead Decay">High Lead Decay — Leads go cold (No follow-up)</option>
-                            <option value="Low Show-Rates">Low Show-Rates — Leads book but don't show</option>
-                            <option value="Poor Lead Quality">Poor Lead Quality — Too many junk/bot leads</option>
-                            <option value="Slow Response Time">Slow Response Time — Leads wait too long for contact</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Current Monthly Ad Spend</label>
-                            <select name="Monthly_Ad_Spend">
-                                <option value="">Select range</option>
-                                <option value="<$2k">&lt;$2,000</option>
-                                <option value="$2k-$5k">$2,000 - $5,000</option>
-                                <option value="$5k-$15k">$5,000 - $15,000</option>
-                                <option value="$15k+">$15,000+</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Average Time-to-Contact</label>
-                            <select name="Time_to_Contact">
-                                <option value="">Select response time</option>
-                                <option value="Immediate">Immediate — Within minutes</option>
-                                <option value="<1 hour">Under 1 hour</option>
-                                <option value="1-4 hours">1-4 hours</option>
-                                <option value="4-24 hours">4-24 hours</option>
-                                <option value="24-48 hours">24-48 hours</option>
-                                <option value="48+ hours">48+ hours — Critical leak</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section 03: System Objective -->
-                <div class="form-section">
-                    <div class="section-title">
-                        <div class="section-number">03</div>
-                        <h3>System Objective</h3>
-                        <p>THE SOLUTION</p>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>The Mission <span class="required">*</span></label>
-                        <textarea name="Mission" rows="3" placeholder="What specific revenue pipeline are we architecting? Describe your current challenge and desired outcome." required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Framework Interest — Which logic gate do you need first?</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="Framework_Interest" value="72-Hour Nurture Engine">
-                                <span>⏱️ 72-Hour Nurture Engine</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="Framework_Interest" value="GEO/AEO Authority">
-                                <span>🤖 GEO/AEO Authority</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="Framework_Interest" value="Zero-Trust Intake">
-                                <span>🔒 Zero-Trust Intake</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="Framework_Interest" value="Written-First Strategy">
-                                <span>✍️ Written-First Strategy</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section 04: The 72-Hour Commitment -->
-                <div class="form-section">
-                    <div class="section-title">
-                        <div class="section-number">04</div>
-                        <h3>The 72-Hour Commitment</h3>
-                        <p>THE ACTION</p>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Onboarding Velocity <span class="required">*</span></label>
-                        <select name="Onboarding_Velocity" required>
-                            <option value="">Select timeline</option>
-                            <option value="Immediately">Immediately — Ready to initiate protocol</option>
-                            <option value="14 Days">Within 14 Days</option>
-                            <option value="30 Days">Within 30 Days</option>
-                            <option value="Just Researching">Just Researching — Future consideration</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="submit-btn">[ INITIATE PROTOCOL ]</button>
-                <div class="micro-copy">
-                    <i class="fas fa-clock"></i> Estimated Audit Time: 12-24 Hours
-                </div>
-            </form>
-
-            <!-- Trust Signals Footer -->
-            <div class="trust-footer">
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="trust-text">
-                        <strong>Privacy Protocol</strong>
-                        <p>All submitted data is encrypted and handled via Zero-Trust principles. We do not sell lead data; we architect it.</p>
-                    </div>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="trust-text">
-                        <strong>ROI Guarantee</strong>
-                        <p>If our system audit doesn't identify at least 3 revenue leaks, the diagnosis is on us.</p>
-                    </div>
-                </div>
-                <div class="system-status">
-                    <div class="status-dot"></div>
-                    <span style="color: #00ff9d; font-size: 0.8rem;">System Online</span>
-                    <span style="color: #666; font-size: 0.75rem;">Currently accepting 2 new architecture audits for March 2026</span>
+    <div class="view-container" id="appContainer">
+        <div id="terminalView">
+            <div class="terminal-container">
+                <div class="terminal-header"><span class="status-dot"></span> [SYSTEM-ID: REVENUE-ARCHITECT-01] // SECURE ACCESS PORTAL</div>
+                <div class="terminal-body">
+                    <form id="protocol-form" action="https://formspree.io/f/xbdpgrwr" method="POST">
+                        <div class="field"><label>LOG_IDENTITY:</label><input type="text" id="fullName" name="full_name" placeholder="FULL_NAME" required></div>
+                        <div class="field"><label>LOG_COMMUNICATION:</label><input type="email" id="email" name="email" placeholder="CORPORATE_EMAIL" required></div>
+                        <div class="field"><label>TARGET_VERTICAL:</label><select id="vertical" name="target_vertical"><option value="B2B_SAAS">B2B_SAAS</option><option value="CLINICAL">HIGH_MARGIN_SURGICAL</option></select></div>
+                        <div class="field"><label>SYSTEM_VULNERABILITY:</label><textarea id="vulnerability" name="vulnerability" rows="2" placeholder="DESCRIBE_LEAD_DECAY_SYMPTOMS"></textarea></div>
+                        <input type="text" name="_gotcha" style="display:none">
+                        <button type="submit" class="initiate-btn" id="executeBtn">[ EXECUTE_PROTOCOL ]</button>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <div class="footer">
-            <p>© 2026 Fabian Molokwu // Systems Logic // Built on GitHub</p>
+        <div id="successView" class="hidden">
+            <div class="success-screen"><h1 class="success-title">PROTOCOL SUCCESSFUL</h1><div class="data-dump" id="dataDump"><p>> HANDSHAKE ESTABLISHED</p><p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p><p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p></div><div class="progress-bar-container"><div class="progress-fill"></div></div><button class="back-btn" id="returnToBaseBtn">[ RETURN_TO_BASE ]</button></div>
         </div>
     </div>
 
     <script>
-        // Mobile Navigation Toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (navToggle) {
-            navToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const icon = navToggle.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        }
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = navToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        });
-
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            if (particlesContainer) {
-                for (let i = 0; i < 50; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-                    const size = Math.random() * 4 + 1;
-                    particle.style.width = size + 'px';
-                    particle.style.height = size + 'px';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.animationDuration = Math.random() * 20 + 10 + 's';
-                    particle.style.animationDelay = Math.random() * 10 + 's';
-                    particlesContainer.appendChild(particle);
-                }
-            }
-        }
-        createParticles();
-
-        // Form submission handling
-        const form = document.getElementById('intakeForm');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                // Formspree handles submission
-                // This just ensures smooth UX
-                const btn = form.querySelector('.submit-btn');
-                btn.innerHTML = '[ PROCESSING... ]';
-                btn.disabled = true;
-                // Button will revert on page reload after redirect
-            });
-        }
+        const terminalView = document.getElementById('terminalView'), successView = document.getElementById('successView'), form = document.getElementById('protocol-form'), executeBtn = document.getElementById('executeBtn');
+        function showDecryptAnimation() { return new Promise((resolve) => { let overlay = document.createElement('div'); overlay.className = 'loading-overlay'; overlay.innerHTML = `<div class="decrypt-box"><div style="color:#00ff9d;">⚡ PROTOCOL_AUTHENTICATION</div><div class="decrypt-progress"><div class="decrypt-bar" id="decryptBar"></div></div><div id="decryptMsg">HANDSHAKE_INITIATED...</div></div>`; document.body.appendChild(overlay); let progress = 0, bar = overlay.querySelector('#decryptBar'), msg = overlay.querySelector('#decryptMsg'); let interval = setInterval(() => { progress += Math.random() * 15 + 5; if (progress >= 100) { clearInterval(interval); bar.style.width = '100%'; msg.innerHTML = 'HANDSHAKE_COMPLETE'; setTimeout(() => { overlay.remove(); resolve(); }, 600); } else { bar.style.width = progress + '%'; if (progress > 50) msg.innerHTML = 'ENCRYPTING_DATA_STREAMS...'; } }, 90); }); }
+        function showTerminalError(msg) { let div = document.createElement('div'); div.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#ff0055;color:#000;padding:10px 20px;font-family:monospace;font-size:0.75rem;z-index:3000;border-radius:4px;'; div.innerHTML = `⚠️ ${msg}`; document.body.appendChild(div); setTimeout(() => div.remove(), 3000); }
+        form.addEventListener('submit', async (e) => { e.preventDefault(); let name = document.getElementById('fullName').value.trim(), email = document.getElementById('email').value.trim(); if (!name) { showTerminalError("LOG_IDENTITY required"); return; } if (!email || !email.includes('@')) { showTerminalError("Valid LOG_COMMUNICATION required"); return; } executeBtn.disabled = true; executeBtn.textContent = '[ PROCESSING... ]'; try { let fd = new FormData(form); let res = await fetch('https://formspree.io/f/xbdpgrwr', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }); if (res.ok) { await showDecryptAnimation(); terminalView.classList.add('hidden'); successView.classList.remove('hidden'); let dataDiv = document.getElementById('dataDump'); if (dataDiv) dataDiv.innerHTML = `<p>> IDENTITY: ${name.toUpperCase()}</p><p>> COMMUNICATION: ${email.replace(/(.{2})(.*)(@)/,'$1***$3')}</p><p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p><p>> ZERO-TRUST INTAKE: DEPLOYED</p><p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p>`; } else { showTerminalError("Submission failed. Retry."); executeBtn.disabled = false; executeBtn.textContent = '[ EXECUTE_PROTOCOL ]'; } } catch(err) { showTerminalError("Network error. Check connection."); executeBtn.disabled = false; executeBtn.textContent = '[ EXECUTE_PROTOCOL ]'; } });
+        document.getElementById('returnToBaseBtn')?.addEventListener('click', () => { successView.classList.add('hidden'); terminalView.classList.remove('hidden'); form.reset(); executeBtn.disabled = false; executeBtn.textContent = '[ EXECUTE_PROTOCOL ]'; });
+        const menuToggle = document.getElementById('menuToggle'), navLinks = document.getElementById('navLinks'); if(menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
     </script>
 </body>
-  </html>
+    </html>
