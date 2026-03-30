@@ -1,22 +1,18 @@
-<!-- initiate.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Initiate the Revenue Architecture protocol. Secure intake gate for high-margin patient pipelines and B2B SaaS growth systems.">
-    <meta name="keywords" content="Initiate Protocol, Revenue Architecture Intake, Zero-Trust Lead Generation, Secure Intake Gate, 72-Hour Nurture Activation">
-    <title>Initiate Protocol | Fabian Molokwu — Revenue Architect // Secure Intake Gate</title>
+    <title>Initiate Protocol | Fabian Molokwu — Revenue Architect</title>
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Revenue Architecture Intake Protocol",
-      "description": "Secure intake gate for initiating Zero-Trust Demand Systems. Submit your credentials to activate the 72-Hour Nurture Engine and AEO/GEO optimization.",
-      "provider": { "@type": "ProfessionalService", "name": "Fabian Molokwu - Revenue Architect" },
-      "areaServed": "Global",
-      "serviceType": "Revenue Architecture Deployment"
+      "description": "Secure intake gate for initiating Zero-Trust Demand Systems.",
+      "provider": { "@type": "ProfessionalService", "name": "Fabian Molokwu - Revenue Architect" }
     }
     </script>
     
@@ -24,8 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --accent-glow: #00ff9d; --terminal-black: #0a0a0a; --font-mono: 'JetBrains Mono', monospace; }
-        body { background: #010101; background-image: radial-gradient(rgba(0,255,157,0.03) 1px, transparent 1px); background-size: 40px 40px; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; font-family: var(--font-mono); position: relative; }
+        :root { --accent-glow: #00ff9d; --font-mono: 'JetBrains Mono', monospace; }
+        body { background: #010101; background-image: radial-gradient(rgba(0,255,157,0.03) 1px, transparent 1px); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; font-family: var(--font-mono); }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(0deg, rgba(0,255,157,0.02) 0px, rgba(0,255,157,0.02) 2px, transparent 2px, transparent 6px); pointer-events: none; z-index: 10; }
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(1,1,1,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,255,157,0.2); padding: 0.75rem 2rem; }
         .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
@@ -37,7 +33,7 @@
         .nav-cta { border: 1px solid var(--accent-glow); padding: 0.5rem 1.2rem; border-radius: 4px; background: var(--accent-glow); color: #000 !important; }
         .menu-toggle { display: none; font-size: 1.5rem; color: var(--accent-glow); cursor: pointer; background: none; border: none; }
         .view-container { width: 100%; max-width: 680px; margin-top: 80px; }
-        .terminal-container { background: #050505; border: 2px solid #00ff9d; box-shadow: 0 0 30px rgba(0,255,157,0.25); border-radius: 0; width: 100%; }
+        .terminal-container { background: #050505; border: 2px solid #00ff9d; box-shadow: 0 0 30px rgba(0,255,157,0.25); width: 100%; }
         .terminal-header { background: #00ff9d; color: #000; padding: 10px 20px; font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; gap: 12px; }
         .status-dot { width: 10px; height: 10px; background: #00ff9d; border-radius: 50%; box-shadow: 0 0 8px #00ff9d; animation: pulseDot 1.5s infinite; }
         @keyframes pulseDot { 0%,100%{opacity:1;} 50%{opacity:0.6;} }
@@ -54,12 +50,12 @@
         .decrypt-progress { width: 100%; height: 3px; background: #1a2a1a; margin: 1.5rem 0; overflow: hidden; }
         .decrypt-bar { width: 0%; height: 100%; background: #00ff9d; transition: width 0.1s linear; }
         .success-screen { background: #050505; border: 2px solid #00ff9d; padding: 2.5rem 2rem; text-align: center; animation: fadeIn 0.5s; }
-        .success-title { font-size: clamp(1.8rem,6vw,2.5rem); font-weight: 800; color: #fff; text-shadow: 3px 3px 0px #ff0055, -2px -2px 0px #00ff9d; margin-bottom: 1.5rem; }
+        .success-title { font-size: clamp(1.5rem,6vw,2.2rem); font-weight: 800; color: #fff; text-shadow: 2px 2px 0px #ff0055, -1px -1px 0px #00ff9d; margin-bottom: 1.5rem; }
         .data-dump { color: #00ff9d; font-size: 0.8rem; margin: 1.5rem 0; line-height: 1.8; text-align: left; background: #0a0a0a; padding: 1.2rem; border-left: 3px solid #00ff9d; }
         .progress-bar-container { width: 100%; height: 6px; background: #1f2a1f; margin: 1.5rem 0; overflow: hidden; }
         .progress-fill { width: 0%; height: 100%; background: #00ff9d; animation: fillProgress 1.5s ease-out forwards; }
         @keyframes fillProgress { to { width: 100%; } }
-        .back-btn { background: transparent; border: 1.5px solid #00ff9d; color: #00ff9d; padding: 12px 28px; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; }
+        .back-btn { background: transparent; border: 1.5px solid #00ff9d; color: #00ff9d; padding: 12px 28px; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 1rem; }
         .back-btn:hover { background: #00ff9d; color: #000; box-shadow: 0 0 20px #00ff9d; }
         .hidden { display: none; }
         .field-error { border-color: #ff0055 !important; animation: shake 0.3s; }
@@ -87,29 +83,131 @@
             <div class="terminal-container">
                 <div class="terminal-header"><span class="status-dot"></span> [SYSTEM-ID: REVENUE-ARCHITECT-01] // SECURE ACCESS PORTAL</div>
                 <div class="terminal-body">
-                    <form id="protocol-form" action="https://formspree.io/f/xbdpgrwr" method="POST">
-                        <div class="field"><label>LOG_IDENTITY:</label><input type="text" id="fullName" name="full_name" placeholder="FULL_NAME" required></div>
+                    <form id="protocol-form">
+                        <div class="field"><label>LOG_IDENTITY:</label><input type="text" id="fullName" name="name" placeholder="FULL_NAME" required></div>
                         <div class="field"><label>LOG_COMMUNICATION:</label><input type="email" id="email" name="email" placeholder="CORPORATE_EMAIL" required></div>
-                        <div class="field"><label>TARGET_VERTICAL:</label><select id="vertical" name="target_vertical"><option value="B2B_SAAS">B2B_SAAS</option><option value="CLINICAL">HIGH_MARGIN_SURGICAL</option></select></div>
-                        <div class="field"><label>SYSTEM_VULNERABILITY:</label><textarea id="vulnerability" name="vulnerability" rows="2" placeholder="DESCRIBE_LEAD_DECAY_SYMPTOMS"></textarea></div>
-                        <input type="text" name="_gotcha" style="display:none">
+                        <div class="field"><label>TARGET_VERTICAL:</label><select id="vertical" name="vertical"><option value="B2B_SAAS">B2B_SAAS_ARCHITECTURE</option><option value="CLINICAL">HIGH_MARGIN_SURGICAL</option></select></div>
+                        <div class="field"><label>SYSTEM_VULNERABILITY:</label><textarea id="vulnerability" name="message" rows="2" placeholder="DESCRIBE_LEAD_DECAY_SYMPTOMS"></textarea></div>
                         <button type="submit" class="initiate-btn" id="executeBtn">[ EXECUTE_PROTOCOL ]</button>
                     </form>
                 </div>
             </div>
         </div>
         <div id="successView" class="hidden">
-            <div class="success-screen"><h1 class="success-title">PROTOCOL SUCCESSFUL</h1><div class="data-dump" id="dataDump"><p>> HANDSHAKE ESTABLISHED</p><p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p><p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p></div><div class="progress-bar-container"><div class="progress-fill"></div></div><button class="back-btn" id="returnToBaseBtn">[ RETURN_TO_BASE ]</button></div>
+            <div class="success-screen">
+                <h1 class="success-title">PROTOCOL SUCCESSFUL</h1>
+                <div class="data-dump" id="dataDump"><p>> HANDSHAKE ESTABLISHED</p><p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p><p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p></div>
+                <div class="progress-bar-container"><div class="progress-fill"></div></div>
+                <button class="back-btn" id="returnToBaseBtn">[ RETURN_TO_BASE ]</button>
+            </div>
         </div>
     </div>
 
     <script>
-        const terminalView = document.getElementById('terminalView'), successView = document.getElementById('successView'), form = document.getElementById('protocol-form'), executeBtn = document.getElementById('executeBtn');
-        function showDecryptAnimation() { return new Promise((resolve) => { let overlay = document.createElement('div'); overlay.className = 'loading-overlay'; overlay.innerHTML = `<div class="decrypt-box"><div style="color:#00ff9d;">⚡ PROTOCOL_AUTHENTICATION</div><div class="decrypt-progress"><div class="decrypt-bar" id="decryptBar"></div></div><div id="decryptMsg">HANDSHAKE_INITIATED...</div></div>`; document.body.appendChild(overlay); let progress = 0, bar = overlay.querySelector('#decryptBar'), msg = overlay.querySelector('#decryptMsg'); let interval = setInterval(() => { progress += Math.random() * 15 + 5; if (progress >= 100) { clearInterval(interval); bar.style.width = '100%'; msg.innerHTML = 'HANDSHAKE_COMPLETE'; setTimeout(() => { overlay.remove(); resolve(); }, 600); } else { bar.style.width = progress + '%'; if (progress > 50) msg.innerHTML = 'ENCRYPTING_DATA_STREAMS...'; } }, 90); }); }
-        function showTerminalError(msg) { let div = document.createElement('div'); div.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#ff0055;color:#000;padding:10px 20px;font-family:monospace;font-size:0.75rem;z-index:3000;border-radius:4px;'; div.innerHTML = `⚠️ ${msg}`; document.body.appendChild(div); setTimeout(() => div.remove(), 3000); }
-        form.addEventListener('submit', async (e) => { e.preventDefault(); let name = document.getElementById('fullName').value.trim(), email = document.getElementById('email').value.trim(); if (!name) { showTerminalError("LOG_IDENTITY required"); return; } if (!email || !email.includes('@')) { showTerminalError("Valid LOG_COMMUNICATION required"); return; } executeBtn.disabled = true; executeBtn.textContent = '[ PROCESSING... ]'; try { let fd = new FormData(form); let res = await fetch('https://formspree.io/f/xbdpgrwr', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }); if (res.ok) { await showDecryptAnimation(); terminalView.classList.add('hidden'); successView.classList.remove('hidden'); let dataDiv = document.getElementById('dataDump'); if (dataDiv) dataDiv.innerHTML = `<p>> IDENTITY: ${name.toUpperCase()}</p><p>> COMMUNICATION: ${email.replace(/(.{2})(.*)(@)/,'$1***$3')}</p><p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p><p>> ZERO-TRUST INTAKE: DEPLOYED</p><p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p>`; } else { showTerminalError("Submission failed. Retry."); executeBtn.disabled = false; executeBtn.textContent = '[ EXECUTE_PROTOCOL ]'; } } catch(err) { showTerminalError("Network error. Check connection."); executeBtn.disabled = false; executeBtn.textContent = '[ EXECUTE_PROTOCOL ]'; } });
-        document.getElementById('returnToBaseBtn')?.addEventListener('click', () => { successView.classList.add('hidden'); terminalView.classList.remove('hidden'); form.reset(); executeBtn.disabled = false; executeBtn.textContent = '[ EXECUTE_PROTOCOL ]'; });
-        const menuToggle = document.getElementById('menuToggle'), navLinks = document.getElementById('navLinks'); if(menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+        const terminalView = document.getElementById('terminalView');
+        const successView = document.getElementById('successView');
+        const form = document.getElementById('protocol-form');
+        const executeBtn = document.getElementById('executeBtn');
+
+        function showDecryptAnimation() {
+            return new Promise((resolve) => {
+                let overlay = document.createElement('div');
+                overlay.className = 'loading-overlay';
+                overlay.innerHTML = `<div class="decrypt-box"><div style="color:#00ff9d;margin-bottom:1rem;">⚡ PROTOCOL_AUTHENTICATION</div><div class="decrypt-progress"><div class="decrypt-bar" id="decryptBar"></div></div><div id="decryptMsg" style="color:#00ff9d;font-size:0.8rem;">HANDSHAKE_INITIATED...</div></div>`;
+                document.body.appendChild(overlay);
+                let progress = 0;
+                let bar = overlay.querySelector('#decryptBar');
+                let msg = overlay.querySelector('#decryptMsg');
+                let interval = setInterval(() => {
+                    progress += Math.random() * 15 + 5;
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        bar.style.width = '100%';
+                        msg.innerHTML = 'HANDSHAKE_COMPLETE';
+                        setTimeout(() => { overlay.remove(); resolve(); }, 600);
+                    } else {
+                        bar.style.width = progress + '%';
+                        if (progress > 50) msg.innerHTML = 'ENCRYPTING_DATA_STREAMS...';
+                    }
+                }, 90);
+            });
+        }
+
+        function showTerminalError(msg) {
+            let div = document.createElement('div');
+            div.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#ff0055;color:#fff;padding:10px 20px;font-family:monospace;font-size:0.75rem;z-index:3000;border-radius:4px;';
+            div.innerHTML = `⚠️ ${msg}`;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 3000);
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            let name = document.getElementById('fullName').value.trim();
+            let email = document.getElementById('email').value.trim();
+            
+            if (!name) { showTerminalError("LOG_IDENTITY required"); return; }
+            if (!email || !email.includes('@')) { showTerminalError("Valid LOG_COMMUNICATION required"); return; }
+            
+            executeBtn.disabled = true;
+            executeBtn.textContent = '[ PROCESSING... ]';
+            
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('vertical', document.getElementById('vertical').value);
+            formData.append('message', document.getElementById('vulnerability').value || 'Standard pipeline optimization required');
+            formData.append('_subject', 'New Protocol Initiation - Revenue Architect');
+            
+            try {
+                const response = await fetch('https://formspree.io/f/xbdpgrwr', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    await showDecryptAnimation();
+                    terminalView.classList.add('hidden');
+                    successView.classList.remove('hidden');
+                    
+                    let dataDiv = document.getElementById('dataDump');
+                    if (dataDiv) {
+                        dataDiv.innerHTML = `
+                            <p>> IDENTITY: ${name.toUpperCase()}</p>
+                            <p>> COMMUNICATION: ${email.replace(/(.{2})(.*)(@)/, '$1***$3')}</p>
+                            <p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p>
+                            <p>> ZERO-TRUST INTAKE: DEPLOYED</p>
+                            <p>> SECURE HANDSHAKE: ESTABLISHED</p>
+                            <p>> EXPECT FIRST DATA PACKET IN < 4 HOURS</p>
+                        `;
+                    }
+                } else {
+                    const errorData = await response.json();
+                    showTerminalError("Submission failed: " + (errorData.error || "Please try again"));
+                    executeBtn.disabled = false;
+                    executeBtn.textContent = '[ EXECUTE_PROTOCOL ]';
+                }
+            } catch(err) {
+                console.error('Formspree error:', err);
+                showTerminalError("Network error. Please check your connection and try again.");
+                executeBtn.disabled = false;
+                executeBtn.textContent = '[ EXECUTE_PROTOCOL ]';
+            }
+        });
+
+        document.getElementById('returnToBaseBtn')?.addEventListener('click', () => {
+            successView.classList.add('hidden');
+            terminalView.classList.remove('hidden');
+            form.reset();
+            executeBtn.disabled = false;
+            executeBtn.textContent = '[ EXECUTE_PROTOCOL ]';
+        });
+
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if(menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
     </script>
 </body>
     </html>
