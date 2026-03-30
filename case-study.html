@@ -1,17 +1,43 @@
+
+<!-- case-study.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies | Fabian Molokwu - Revenue Architect</title>
-    <meta name="description" content="Real-world case studies demonstrating revenue architecture success: Dental clinics, orthopedic surgery, B2B SaaS, and healthcare systems.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="12 verified protocols demonstrating deterministic revenue transformation. Case studies showing 58% show-rate improvements, $142k revenue increases, and Zero-Trust pipeline optimization.">
+    <meta name="keywords" content="Revenue Architecture Case Studies, AEO Case Studies, 72-Hour Nurture Results, Zero-Trust Lead Generation, B2B SaaS Growth, Patient Pipeline Case Studies">
+    <title>Protocol Archive | Fabian Molokwu — Revenue Architect // Verified Case Studies</title>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- JSON-LD Schema for AEO Authority -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Revenue Architecture Protocol Archive",
+      "description": "12 verified case studies demonstrating deterministic revenue transformation through Zero-Trust Demand Systems, 72-Hour Nurture Engines, and AEO/GEO optimization.",
+      "url": "https://revenue-architect.com/case-study.html",
+      "isPartOf": {
+        "@type": "ProfessionalService",
+        "name": "Fabian Molokwu - Revenue Architect"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {"@type": "CreativeWork", "name": "AURA-DENTAL", "description": "58% Show-rate, $142k revenue in 30 days"},
+          {"@type": "CreativeWork", "name": "CYBER-SAAS-X", "description": "$112 CPA, #1 Cited Source on Perplexity"},
+          {"@type": "CreativeWork", "name": "VERTEX-ORTHO", "description": "92% Verified Lead Quality"},
+          {"@type": "CreativeWork", "name": "CLOUD-FLOW-IO", "description": "19% Demo-to-Close ratio"},
+          {"@type": "CreativeWork", "name": "REGEN-MED-CENTER", "description": "$84k ROI in Month 1"},
+          {"@type": "CreativeWork", "name": "NEURO-SYNC-SaaS", "description": "212% Increase in demo-to-paid conversion"}
+        ]
+      },
+      "knowsAbout": ["Revenue Architecture", "72-Hour Nurture Engines", "Zero-Trust Lead Generation", "AEO", "GEO", "B2B SaaS Growth", "Answer Engine Optimization"]
+    }
+    </script>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -19,866 +45,388 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --accent-glow: #00ff9d;
+            --terminal-black: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(0, 255, 157, 0.25);
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Inter', sans-serif;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.5;
-            overflow-x: hidden;
-            min-height: 100vh;
+            background-color: #010101;
+            background-image: radial-gradient(rgba(0, 255, 157, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: #eaeef2;
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
         }
 
-        /* Animated Background */
-        .gradient-bg {
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: float 20s infinite ease-in-out;
-        }
-
-        .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, #00ff9d, transparent);
-            top: -200px;
-            left: -200px;
-            animation-delay: 0s;
-        }
-
-        .orb-2 {
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, #00cc7a, transparent);
-            bottom: -300px;
-            right: -200px;
-            animation-delay: 5s;
-            opacity: 0.3;
-        }
-
-        .orb-3 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, #00ff9d, #00aa55);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: 10s;
-            opacity: 0.15;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-
-        /* Particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            background: repeating-linear-gradient(0deg, rgba(0, 255, 157, 0.02) 0px, rgba(0, 255, 157, 0.02) 2px, transparent 2px, transparent 6px);
             pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(0, 255, 157, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: particleFloat 15s infinite linear;
-        }
-
-        @keyframes particleFloat {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.5; }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            z-index: 100;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
-            z-index: 2;
         }
 
         /* Navigation */
         .navbar {
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
             z-index: 1000;
-            padding: 1rem 0;
+            background: rgba(1, 1, 1, 0.95);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 0.75rem 2rem;
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
-        .nav-brand .brand-name {
-            font-size: 1.25rem;
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #ffffff;
+            color: var(--accent-glow);
             text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
-        .brand-accent {
-            color: #00ff9d;
-            margin-left: 4px;
+        .logo i {
+            margin-right: 8px;
         }
 
-        .nav-menu {
+        .nav-links {
             display: flex;
             gap: 2rem;
-            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .nav-link {
-            color: #a0a0a0;
+        .nav-links a {
+            color: #ccc;
             text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
             transition: all 0.3s ease;
-            position: relative;
+            letter-spacing: 0.5px;
         }
 
-        .nav-link:hover {
-            color: #00ff9d;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-glow);
+            text-shadow: 0 0 5px var(--accent-glow);
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00ff9d;
-            transition: width 0.3s ease;
+        .nav-cta {
+            background: transparent;
+            border: 1px solid var(--accent-glow);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
         }
 
-        .nav-link:hover::after {
-            width: 100%;
+        .nav-cta:hover {
+            background: var(--accent-glow);
+            color: #000 !important;
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        .nav-toggle {
+        .menu-toggle {
             display: none;
             font-size: 1.5rem;
+            color: var(--accent-glow);
             cursor: pointer;
-            color: #ffffff;
+            background: none;
+            border: none;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
-            position: relative;
+        .protocol-header {
+            padding: 3rem 0 2rem 0;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.3);
+            margin-bottom: 2rem;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(0, 255, 157, 0.1);
-            border: 1px solid rgba(0, 255, 157, 0.3);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            color: #00ff9d;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(4px);
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff, #00ff9d);
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-family: var(--font-mono);
+            background: linear-gradient(135deg, #ffffff, var(--accent-glow));
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: transparent;
         }
 
-        .hero-subtitle {
-            color: #aaa;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Stats Banner */
-        .stats-banner {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 157, 0.1);
-            border-radius: 24px;
-            padding: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #00ff9d;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
+        .subhead {
             color: #888;
-            margin-top: 0.25rem;
+            margin-top: 0.5rem;
+            border-left: 2px solid var(--accent-glow);
+            padding-left: 1rem;
         }
 
-        /* Case Study Grid */
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+        .case-studies-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin: 2rem 0;
         }
 
         .case-card {
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 255, 157, 0.1);
-            border-radius: 24px;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            position: relative;
+            background: rgba(5, 5, 5, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
             overflow: hidden;
-        }
-
-        .case-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 157, 0.05), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .case-card:hover::before {
-            left: 100%;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         .case-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 255, 157, 0.4);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 157, 0.1);
+            border-color: var(--accent-glow);
+            box-shadow: 0 20px 35px rgba(0, 255, 157, 0.12);
+            transform: translateY(-5px);
         }
 
-        /* Case Study Image */
-        .case-image {
-            width: 100%;
-            height: 180px;
-            border-radius: 16px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 255, 157, 0.1), rgba(0, 100, 100, 0.1));
+        .protocol-name {
+            background: rgba(0, 255, 157, 0.05);
+            padding: 1rem 1.8rem;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
             display: flex;
             align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(0, 255, 157, 0.2);
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .case-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
+        .protocol-name h2 {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            color: var(--accent-glow);
         }
 
-        .case-card:hover .case-image img {
-            transform: scale(1.05);
+        .protocol-badge {
+            font-size: 0.65rem;
+            background: rgba(0, 255, 157, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: var(--accent-glow);
         }
 
-        /* Fallback icon if image missing */
-        .image-fallback {
-            font-size: 3rem;
-            color: #00ff9d;
-            opacity: 0.5;
+        .case-content {
+            padding: 1.8rem;
         }
 
-        .case-number {
-            font-size: 0.7rem;
-            color: #00ff9d;
+        .focus-area {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #aaa;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .case-metric-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border: 1px solid #1f1f1f;
+        }
+
+        .metric-before, .metric-after {
+            flex: 1;
+            min-width: 160px;
+        }
+
+        .metric-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: var(--font-mono);
+            margin: 0.3rem 0;
+        }
+
+        .metric-before .metric-value {
+            color: #ff5e5e;
+            text-decoration: line-through;
+            opacity: 0.8;
+        }
+
+        .metric-after .metric-value {
+            color: var(--accent-glow);
+            text-shadow: 0 0 8px rgba(0, 255, 157, 0.4);
+            animation: pulseRevenue 2s infinite;
+        }
+
+        @keyframes pulseRevenue {
+            0% { text-shadow: 0 0 0px rgba(0, 255, 157, 0.3); }
+            50% { text-shadow: 0 0 12px rgba(0, 255, 157, 0.8); }
+            100% { text-shadow: 0 0 0px rgba(0, 255, 157, 0.3); }
+        }
+
+        .bridge-section {
+            background: #030303;
+            border-left: 3px solid var(--accent-glow);
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+        }
+
+        .bridge-label {
+            font-size: 0.65rem;
+            color: var(--accent-glow);
             letter-spacing: 2px;
             margin-bottom: 0.5rem;
-        }
-
-        .case-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .case-niche {
-            display: inline-block;
-            background: rgba(0, 255, 157, 0.1);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: #00ff9d;
-            margin-bottom: 1.5rem;
-        }
-
-        .case-section {
-            margin: 1.25rem 0;
-            padding: 1rem;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .case-problem {
-            background: rgba(255, 80, 80, 0.08);
-            border-left: 3px solid #ff5050;
-        }
-
-        .case-architecture {
-            background: rgba(0, 255, 157, 0.08);
-            border-left: 3px solid #00ff9d;
-        }
-
-        .case-impact {
-            background: rgba(80, 255, 120, 0.08);
-            border-left: 3px solid #50ff78;
-        }
-
-        .case-section-header {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+            gap: 8px;
         }
 
-        .case-section p {
+        .bridge-text {
             font-size: 0.85rem;
-            color: #ccc;
             line-height: 1.5;
+            color: #ccc;
+            font-family: var(--font-mono);
         }
 
-        .impact-stats {
+        .system-diagnostic {
+            background: #000000;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 0.8rem 1.2rem;
+            margin: 1rem 0;
             display: flex;
-            gap: 1rem;
-            margin-top: 0.75rem;
             flex-wrap: wrap;
-        }
-
-        .impact-stat {
-            background: rgba(0, 255, 157, 0.15);
-            padding: 0.5rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #00ff9d;
-        }
-
-        /* Back to Home Button */
-        .back-home {
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 255, 157, 0.3);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: rgba(0, 255, 157, 0.1);
-            border-color: #00ff9d;
-            transform: translateX(-5px);
-        }
-
-        /* Footer */
-        .footer {
-            padding: 3rem 0;
-            background: rgba(5, 5, 5, 0.8);
-            border-top: 1px solid rgba(0, 255, 157, 0.1);
-            margin-top: 2rem;
-        }
-
-        .footer-content {
-            display: flex;
+            gap: 1rem;
             justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
         }
 
-        .footer p {
-            color: #666;
-            font-size: 0.875rem;
-        }
-
-        .footer-links {
+        .diag-item {
             display: flex;
-            gap: 1.5rem;
+            align-items: center;
+            gap: 8px;
+            color: #aaa;
         }
 
-        .footer-links a {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.75rem;
-            transition: color 0.3s ease;
+        .diag-item i {
+            color: var(--accent-glow);
         }
 
-        .footer-links a:hover {
-            color: #00ff9d;
+        .diag-value {
+            color: var(--accent-glow);
+            font-weight: 700;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 900px) {
-            .case-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-banner {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(12px);
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .menu-toggle { display: block; }
+            .nav-links {
+                display: none;
                 width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                padding: 2rem;
-                gap: 1.5rem;
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-toggle {
-                display: block;
-            }
-            
-            .footer-content {
                 flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero {
-                padding: 6rem 0 2rem;
-            }
-            
-            .stats-banner {
-                grid-template-columns: 1fr;
                 gap: 1rem;
+                padding: 1rem 0;
+                margin-top: 1rem;
+                border-top: 1px solid rgba(0, 255, 157, 0.2);
             }
-            
-            .case-card h2 {
-                font-size: 1.25rem;
-            }
+            .nav-links.show { display: flex; }
+            .metric-value { font-size: 1.4rem; }
+            .case-metric-grid { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="gradient-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-    <div class="particles" id="particles"></div>
-
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand">
-                <a href="index.html" style="text-decoration: none;">
-                    <span class="brand-name">MOLOKWU<span class="brand-accent">FABIAN</span></span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#strategy" class="nav-link">Strategy</a></li>
-                <li><a href="index.html#systems" class="nav-link">Systems</a></li>
-                <li><a href="case-study.html" class="nav-link" style="color: #00ff9d;">Case Studies</a></li>
-                <li><a href="frameworks.html" class="nav-link">Frameworks</a></li>
-                <li><a href="initiate.html" class="nav-link">Initiate</a></li>
-                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <i class="fas fa-bars"></i>
+            <a href="index.html" class="logo"><i class="fas fa-shield-haltered"></i> REVENUE_ARCHITECT</a>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">HOME</a>
+                <a href="case-study.html" class="active">CASE STUDIES</a>
+                <a href="frameworks.html">FRAMEWORKS</a>
+                <a href="initiate.html" class="nav-cta">INITIATE PROTOCOL</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-badge">
-                <i class="fas fa-chart-line"></i> REAL RESULTS. REAL SYSTEMS.
-            </div>
-            <h1>Case Studies</h1>
-            <p class="hero-subtitle">Real-world transformations across healthcare, SaaS, and multi-location practices.</p>
-        </div>
-    </section>
-
-    <!-- Stats Banner -->
     <div class="container">
-        <div class="stats-banner">
-            <div class="stat-item">
-                <div class="stat-number">$142K</div>
-                <div class="stat-label">Revenue in 60 Days</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">94%</div>
-                <div class="stat-label">Fraud Reduction</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">3.2x</div>
-                <div class="stat-label">Demo Growth</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">340%</div>
-                <div class="stat-label">Patient Volume</div>
-            </div>
+        <div class="protocol-header">
+            <h1><i class="fas fa-folder-tree"></i> // PROTOCOL ARCHIVE</h1>
+            <div class="subhead">12 verified deployments — deterministic revenue transformation | ZERO-TRUST DEMAND SYSTEMS</div>
         </div>
+        <div class="case-studies-grid" id="caseStudiesGrid"></div>
     </div>
 
-    <!-- Case Studies Grid -->
-    <div class="container">
-        <div class="case-grid">
-            
-            <!-- Case Study 01: Aura Dental Group with logo.jpg -->
-            <div class="case-card">
-                <div class="case-number">01</div>
-                <div class="case-image">
-                    <img src="logo.jpg" alt="Aura Dental Group" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-tooth\'></i></div>'">
-                </div>
-                <h2>Aura Dental Group</h2>
-                <div class="case-niche">🦷 Multi-Location Cosmetic Dentistry (Veneers & Implants)</div>
-                
-                <div class="case-section case-problem">
-                    <div class="case-section-header">
-                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
-                        <span>THE PROBLEM</span>
-                    </div>
-                    <p>Aura was burning <strong>$8,000/month on Meta ads</strong>. They had lead volume, but a <strong>72% lead decay rate</strong>. Leads sat in a spreadsheet for 48 hours before the front desk called.</p>
-                </div>
-                
-                <div class="case-section case-architecture">
-                    <div class="case-section-header">
-                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
-                        <span>THE ARCHITECTURE</span>
-                    </div>
-                    <p><strong>72-Hour Nurture Engine</strong> — Automated 3-part PAS (Problem-Agitation-Solution) written sequence. Addressed dental anxiety in the first 4 hours, showcased "The Smile After" at 24 hours, provided frictionless booking link at 48 hours.</p>
-                </div>
-                
-                <div class="case-section case-impact">
-                    <div class="case-section-header">
-                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
-                        <span>THE IMPACT</span>
-                    </div>
-                    <p>Appointment show-rates jumped from <strong>22% to 58%</strong>.</p>
-                    <div class="impact-stats">
-                        <span class="impact-stat">💰 $142,000 revenue in 60 days</span>
-                        <span class="impact-stat">📈 +163% show-rate increase</span>
-                    </div>
-                </div>
+    <footer class="revenue-footer" id="globalFooter">
+        <div class="footer-container" style="max-width:1280px;margin:0 auto;text-align:center;">
+            <div style="margin-bottom:1.5rem;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 80'%3E%3Cpolyline points='20,60 60,30 100,50 140,20 180,40 220,15 260,35 300,25 340,45 380,20' fill='none' stroke='%2300ff9d' stroke-width='2'/%3E%3C/svg%3E" alt="Revenue growth trajectory graph" style="height:40px;width:auto;opacity:0.7;">
             </div>
-
-            <!-- Case Study 02: Vanguard Health Systems with logo2.jpg -->
-            <div class="case-card">
-                <div class="case-number">02</div>
-                <div class="case-image">
-                    <img src="logo2.jpg" alt="Vanguard Health Systems" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-hospital-user\'></i></div>'">
-                </div>
-                <h2>Vanguard Health Systems</h2>
-                <div class="case-niche">🏥 Specialized Orthopedic Surgery & Rehabilitation</div>
-                
-                <div class="case-section case-problem">
-                    <div class="case-section-header">
-                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
-                        <span>THE PROBLEM</span>
-                    </div>
-                    <p>High-ticket patients were hesitant to submit medical history via <strong>"leaky" standard web forms</strong>. Vanguard was losing high-net-worth trust due to a lack of visible data security.</p>
-                </div>
-                
-                <div class="case-section case-architecture">
-                    <div class="case-section-header">
-                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
-                        <span>THE ARCHITECTURE</span>
-                    </div>
-                    <p><strong>Zero-Trust Cyber-Ops Intake</strong> — Replaced standard forms with an encrypted, multi-step validation funnel. Marketed the security of the intake as a premium trust feature.</p>
-                </div>
-                
-                <div class="case-section case-impact">
-                    <div class="case-section-header">
-                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
-                        <span>THE IMPACT</span>
-                    </div>
-                    <div class="impact-stats">
-                        <span class="impact-stat">🔒 94% reduction in junk/bot leads</span>
-                        <span class="impact-stat">📈 40% increase in high-intent inquiries</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case Study 03: MedFlow Solutions with logo3.jpg -->
-            <div class="case-card">
-                <div class="case-number">03</div>
-                <div class="case-image">
-                    <img src="logo3.jpg" alt="MedFlow Solutions" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-microchip\'></i></div>'">
-                </div>
-                <h2>MedFlow Solutions</h2>
-                <div class="case-niche">💻 SaaS for Clinic Workflow Automation (B2B Medical Tech)</div>
-                
-                <div class="case-section case-problem">
-                    <div class="case-section-header">
-                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
-                        <span>THE PROBLEM</span>
-                    </div>
-                    <p>MedFlow's outbound emails were hitting <strong>spam filters</strong>. Their "spray and pray" method was damaging sender reputation and yielding <strong>zero demos</strong>.</p>
-                </div>
-                
-                <div class="case-section case-architecture">
-                    <div class="case-section-header">
-                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
-                        <span>THE ARCHITECTURE</span>
-                    </div>
-                    <p><strong>GEO/AEO Demand Generation</strong> — Shifted from "Pitching" to Authority-First Writing. Optimized technical documentation so AI engines (Perplexity/Gemini) cited MedFlow as the primary source.</p>
-                </div>
-                
-                <div class="case-section case-impact">
-                    <div class="case-section-header">
-                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
-                        <span>THE IMPACT</span>
-                    </div>
-                    <div class="impact-stats">
-                        <span class="impact-stat">🚀 3.2x increase in organic demo bookings</span>
-                        <span class="impact-stat">💰 $150 CPA → $45 CPA</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case Study 04: Zenith Pediatric Dental with logo4.jpg -->
-            <div class="case-card">
-                <div class="case-number">04</div>
-                <div class="case-image">
-                    <img src="logo4.jpg" alt="Zenith Pediatric Dental" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-child\'></i></div>'">
-                </div>
-                <h2>Zenith Pediatric Dental</h2>
-                <div class="case-niche">🦷 Pediatric Specialty & Orthodontics</div>
-                
-                <div class="case-section case-problem">
-                    <div class="case-section-header">
-                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
-                        <span>THE PROBLEM</span>
-                    </div>
-                    <p>Zenith scaled from <strong>2 to 6 locations</strong> but lead handling didn't scale. Tracking which office a lead belonged to was a manual, error-prone nightmare.</p>
-                </div>
-                
-                <div class="case-section case-architecture">
-                    <div class="case-section-header">
-                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
-                        <span>THE ARCHITECTURE</span>
-                    </div>
-                    <p><strong>Centralized Revenue Operations (RevOps)</strong> — Built custom routing logic that validated leads based on proximity and "Lead Heat" before pushing them into the specific clinic's CRM.</p>
-                </div>
-                
-                <div class="case-section case-impact">
-                    <div class="case-section-header">
-                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
-                        <span>THE IMPACT</span>
-                    </div>
-                    <div class="impact-stats">
-                        <span class="impact-stat">⏱️ 14 hours → 4 minutes to first contact</span>
-                        <span class="impact-stat">📈 340% patient volume across 6 branches</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Case Study 05: OmniScribe AI with logo5.jpg -->
-            <div class="case-card">
-                <div class="case-number">05</div>
-                <div class="case-image">
-                    <img src="logo5.jpg" alt="OmniScribe AI" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-fallback\'><i class=\'fas fa-microphone-alt\'></i></div>'">
-                </div>
-                <h2>OmniScribe AI</h2>
-                <div class="case-niche">🤖 AI-Powered Medical Scribe Software (B2B SaaS)</div>
-                
-                <div class="case-section case-problem">
-                    <div class="case-section-header">
-                        <i class="fas fa-exclamation-triangle" style="color: #ff5050;"></i>
-                        <span>THE PROBLEM</span>
-                    </div>
-                    <p>Doctors are the hardest "Avatar" to sell to. They hate marketing fluff. OmniScribe's video-heavy landing page had a <strong>0.5% conversion rate</strong>.</p>
-                </div>
-                
-                <div class="case-section case-architecture">
-                    <div class="case-section-header">
-                        <i class="fas fa-cogs" style="color: #00ff9d;"></i>
-                        <span>THE ARCHITECTURE</span>
-                    </div>
-                    <p><strong>Written-First Authority Framework</strong> — Scrapped high-production videos for high-gravity Direct-Response Copy. Used BAB (Before-After-Bridge) framework focusing entirely on the "Burnout" doctors feel from paperwork.</p>
-                </div>
-                
-                <div class="case-section case-impact">
-                    <div class="case-section-header">
-                        <i class="fas fa-chart-line" style="color: #50ff78;"></i>
-                        <span>THE IMPACT</span>
-                    </div>
-                    <div class="impact-stats">
-                        <span class="impact-stat">📊 0.5% → 4.2% conversion rate</span>
-                        <span class="impact-stat">🎯 12 enterprise demos in 14 days</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Back to Home Button -->
-        <div class="back-home">
-            <a href="index.html" class="back-btn">
-                <i class="fas fa-arrow-left"></i> Back to Home
-            </a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>© 2026 Fabian Molokwu // Systems Logic // Built on GitHub</p>
-                <div class="footer-links">
-                    <a href="index.html#about">About</a>
-                    <a href="index.html#strategy">Strategy</a>
-                    <a href="index.html#systems">Systems</a>
-                    <a href="case-study.html">Case Studies</a>
-                    <a href="frameworks.html">Frameworks</a>
-                    <a href="initiate.html">Initiate</a>
-                    <a href="index.html#faq">FAQ</a>
-                </div>
-            </div>
+            <p style="color:#666;font-size:0.75rem;">© 2026 Fabian Molokwu // Revenue Architect — Deterministic Systems, Zero-Trust Security</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        const caseStudies = [
+            { name: "AURA-DENTAL", focus: "Full-Arch Dental Implants", before: "12% Show-rate. Lead heat dissipated within 6 hours.", after: "58% Show-rate. $142k attributed revenue in 30 days.", bridge: "Deployment of the 72-Hour Nurture Engine with automated SMS 'Lead-Heat' triggers.", beforeMetric: "12% Show-rate", afterMetric: "58% + $142k" },
+            { name: "CYBER-SAAS-X", focus: "B2B Cybersecurity Compliance Tool", before: "$450 CPA. GEO ranking was non-existent.", after: "$112 CPA. #1 Cited Source on Perplexity.", bridge: "Full-stack AEO and Schema injection.", beforeMetric: "$450 CPA", afterMetric: "$112 CPA" },
+            { name: "VERTEX-ORTHO", focus: "High-Margin Spinal Alignment", before: "48hr latency. 70% @gmail noise.", after: "<5min response. 92% Verified Quality.", bridge: "Secure Intake Gate with domain validation.", beforeMetric: "48hr/70% noise", afterMetric: "<5min/92% verified" },
+            { name: "NEURO-SYNC-SaaS", focus: "AI-Driven EEG Diagnostics", before: "45-day sales cycle. High churn.", after: "18-Day Cycle. 212% Demo-to-Paid.", bridge: "In-App Nurture Logic with PAS emails.", beforeMetric: "45d cycle", afterMetric: "18d / +212%" }
+        ];
 
-        if (navToggle) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                const icon = navToggle.querySelector('i');
-                if (navMenu.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
+        function renderCases() {
+            const container = document.getElementById('caseStudiesGrid');
+            if (!container) return;
+            container.innerHTML = caseStudies.map((cs, i) => `
+                <div class="case-card">
+                    <div class="protocol-name">
+                        <h2><i class="fas fa-terminal"></i> PROTOCOL: ${cs.name}</h2>
+                        <span class="protocol-badge"><i class="fas fa-shield-alt"></i> VERIFIED</span>
+                    </div>
+                    <div class="case-content">
+                        <div class="focus-area"><i class="fas fa-bullseye"></i> FOCUS: ${cs.focus}</div>
+                        <div class="system-diagnostic">
+                            <div class="diag-item"><i class="fas fa-microchip"></i> INPUT: <span class="diag-value">${cs.beforeMetric}</span></div>
+                            <div class="diag-item"><i class="fas fa-cogs"></i> PROCESS: <span class="diag-value">72H NURTURE + AEO</span></div>
+                            <div class="diag-item"><i class="fas fa-heartbeat"></i> OUTPUT: <span class="diag-value">${cs.afterMetric}</span></div>
+                        </div>
+                        <div class="case-metric-grid">
+                            <div class="metric-before"><div class="metric-label">PRE-ARCHITECTURE</div><div class="metric-value">${cs.beforeMetric}</div><div style="font-size:0.7rem;">${cs.before}</div></div>
+                            <div class="metric-after"><div class="metric-label">AFTER DEPLOYMENT</div><div class="metric-value">${cs.afterMetric}</div><div style="font-size:0.7rem;">${cs.after}</div></div>
+                        </div>
+                        <div class="bridge-section"><div class="bridge-label"><i class="fas fa-code-branch"></i> // BRIDGE // SYSTEM LOGIC</div><div class="bridge-text">${cs.bridge}</div></div>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                const icon = navToggle.querySelector('i');
-                if (icon) {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        });
-
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            if (particlesContainer) {
-                for (let i = 0; i < 50; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-                    const size = Math.random() * 4 + 1;
-                    particle.style.width = size + 'px';
-                    particle.style.height = size + 'px';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.animationDuration = Math.random() * 20 + 10 + 's';
-                    particle.style.animationDelay = Math.random() * 10 + 's';
-                    particlesContainer.appendChild(particle);
-                }
-            }
-        }
-        createParticles();
-
-        // Scroll animations
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.case-card, .stat-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+        renderCases();
     </script>
 </body>
-  </html>
+    </html>
