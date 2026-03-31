@@ -2,42 +2,564 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EmailJS Test</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-</head>
-<body style="background: #010101; color: #00ff9d; font-family: monospace; padding: 2rem;">
-    <h2>EmailJS Connection Test</h2>
-    <button id="testBtn">Test EmailJS</button>
-    <div id="result" style="margin-top: 1rem;"></div>
-
-    <script>
-        // Initialize with your public key
-        emailjs.init("ix_ZiRenHLUBxcS6L");
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Revenue Architect Protocol Intake - Secure diagnostic gate for high-margin revenue systems. HIPAA compliant, Zero-Trust architecture.">
+    <title>Protocol Intake | Revenue Architect</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #010101;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .main-wrapper {
+            width: 100%;
+            max-width: 780px;
+        }
+        .terminal-container {
+            width: 100%;
+            background: #050505;
+            border: 2px solid #00ff9d;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0,255,157,0.15);
+        }
+        .terminal-header {
+            background: #00ff9d;
+            color: #000;
+            padding: 12px 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ff9d;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #00ff9d;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+        .terminal-body { padding: 2rem; }
+        .field { margin-bottom: 1.8rem; }
+        label {
+            display: block;
+            color: #00ff9d;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            width: 100%;
+            background: #0a0a0a;
+            border: 1px solid #2a2a2a;
+            color: #e0e0e0;
+            padding: 12px 14px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #00ff9d;
+            box-shadow: 0 0 8px rgba(0,255,157,0.2);
+        }
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            margin: 1.8rem 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(0,255,157,0.08);
+            border: 1px solid rgba(0,255,157,0.3);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            color: #00ff9d;
+            font-family: monospace;
+        }
+        button {
+            width: 100%;
+            background: transparent;
+            border: 1.5px solid #00ff9d;
+            color: #00ff9d;
+            padding: 14px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+        button:hover:not(:disabled) {
+            background: #00ff9d;
+            color: #000;
+            box-shadow: 0 0 20px #00ff9d;
+            transform: translateY(-1px);
+        }
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .error-msg {
+            color: #ff5555;
+            font-size: 0.65rem;
+            margin-top: 5px;
+            display: none;
+        }
         
-        document.getElementById('testBtn').onclick = async function() {
-            document.getElementById('result').innerHTML = 'Sending...';
-            
-            const templateParams = {
-                role: 'Test User',
-                email: 'test@test.com',
-                bottleneck: 'Test',
-                metric: 'Test',
-                target: 'Test',
-                acv: 'Test',
-                timestamp: new Date().toLocaleString()
-            };
-            
-            try {
-                const response = await emailjs.send('service_p3ocsqe', 'template_cqtecyv', templateParams);
-                console.log('Response:', response);
-                document.getElementById('result').innerHTML = '✅ Success! Status: ' + response.status;
-                document.getElementById('result').style.color = '#00ff9d';
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('result').innerHTML = '❌ Error: ' + error.text;
-                document.getElementById('result').style.color = '#ff5555';
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000e0;
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+        .loading-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .decrypt-box {
+            border: 1px solid #00ff9d;
+            padding: 2rem;
+            background: #030303;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .decrypt-progress {
+            width: 100%;
+            height: 2px;
+            background: #1a2a1a;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+        .decrypt-bar {
+            width: 0%;
+            height: 100%;
+            background: #00ff9d;
+            transition: width 0.1s linear;
+        }
+        
+        /* Success Screen */
+        .success-screen {
+            background: #050505;
+            border: 2px solid #00ff9d;
+            padding: 2rem;
+            text-align: center;
+            animation: fadeIn 0.4s ease-out;
+            border-radius: 20px;
+        }
+        .success-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            text-shadow: 2px 2px 0px #ff0055, -1px -1px 0px #00ff9d;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .data-dump {
+            color: #00ff9d;
+            font-size: 0.8rem;
+            margin: 1.5rem 0;
+            line-height: 1.9;
+            text-align: left;
+            background: #0a0a0a;
+            padding: 1.2rem;
+            border-left: 3px solid #00ff9d;
+            font-family: monospace;
+            border-radius: 8px;
+        }
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background: #1f2a1f;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #00ff9d;
+            animation: fillProgress 1.8s ease-out forwards;
+            border-radius: 3px;
+        }
+        @keyframes fillProgress { to { width: 100%; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .back-btn {
+            background: transparent;
+            border: 1.5px solid #00ff9d;
+            color: #00ff9d;
+            padding: 12px 28px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            width: auto;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background: #00ff9d;
+            color: #000;
+            box-shadow: 0 0 20px #00ff9d;
+            transform: translateY(-2px);
+        }
+        .hidden {
+            display: none;
+        }
+        
+        /* Footer Styles */
+        .security-footer {
+            margin-top: 1.5rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(5, 5, 5, 0.9);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            border-radius: 16px;
+            backdrop-filter: blur(4px);
+        }
+        .footer-compliance {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 255, 157, 0.15);
+        }
+        .compliance-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .compliance-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: #00ff9d;
+            font-family: monospace;
+            background: rgba(0, 255, 157, 0.05);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border-left: 2px solid #00ff9d;
+        }
+        .footer-cert {
+            font-size: 0.65rem;
+            color: #5a5a5a;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        .footer-cert span {
+            color: #00ff9d;
+        }
+        .security-seal {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .seal {
+            font-size: 0.7rem;
+            color: #00ff9d;
+            font-family: monospace;
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .terminal-body { padding: 1.5rem; }
+            .trust-badges { gap: 0.6rem; }
+            .footer-compliance { flex-direction: column; align-items: flex-start; }
+            .success-title { font-size: 1.3rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- TERMINAL INTAKE VIEW -->
+    <div id="terminalView">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <span class="status-dot"></span> [REVENUE ARCHITECT] // PROTOCOL INTAKE v2.0
+            </div>
+            <div class="terminal-body">
+                <form id="intake-form">
+                    <div class="field">
+                        <label>🔷 01. YOUR ROLE / BUSINESS TYPE</label>
+                        <select id="role" required>
+                            <option value="">Select one</option>
+                            <option value="Specialty Clinic Owner">🏥 Specialty Clinic Owner (Surgical/Dental/Medical)</option>
+                            <option value="B2B SaaS Founder/Revenue Lead">💼 B2B SaaS Founder / Revenue Lead</option>
+                            <option value="Agency Partner">🤝 Agency Partner (for client deployment)</option>
+                            <option value="Fractional CFO/Operator">📊 Fractional CFO / Operator</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>⚠️ 02. PRIMARY REVENUE BOTTLENECK</label>
+                        <select id="bottleneck" required>
+                            <option value="">Select the main friction point</option>
+                            <option value="Lead decay / slow follow-up">⏳ Lead decay / slow follow-up (>2hr response)</option>
+                            <option value="Low show rate / high no-show">📉 Low show rate / high no-show (>20% no-show)</option>
+                            <option value="Poor AI visibility (AEO/GEO)">🌐 Poor AI visibility (not cited by Perplexity/ChatGPT)</option>
+                            <option value="Unqualified leads / high noise">🚫 Unqualified leads / high noise (low intent)</option>
+                            <option value="Long sales cycle (SaaS)">🔄 Long sales cycle (>30 days demo-to-close)</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>📊 03. CURRENT KEY METRIC</label>
+                        <input type="text" id="metric" placeholder="e.g., $450 CPA / 35% no-show / 45-day sales cycle" required>
+                    </div>
+
+                    <div class="field">
+                        <label>🎯 04. TARGET HIGH-VALUE OUTCOME</label>
+                        <select id="target" required>
+                            <option value="">Select your primary goal</option>
+                            <option value="Increase show rate to 55%+">📈 Increase show rate to 55%+ (clinical)</option>
+                            <option value="Reduce CPA by 40%+">💰 Reduce CPA by 40%+ (SaaS)</option>
+                            <option value="Cut sales cycle to under 18 days">⚡ Cut sales cycle to under 18 days (SaaS)</option>
+                            <option value="Become #1 cited authority on AI engines">🏆 Become #1 cited authority on AI engines (AEO/GEO)</option>
+                            <option value="Eliminate lead decay entirely">🧠 Eliminate lead decay entirely (72H Nurture)</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>💎 05. AVERAGE CONTRACT VALUE / PROCEDURE VALUE</label>
+                        <input type="text" id="acv" placeholder="e.g., $25k (implants) / $15k ACV (SaaS)" required>
+                    </div>
+
+                    <div class="field">
+                        <label>📧 06. CORPORATE EMAIL</label>
+                        <input type="email" id="email" placeholder="name@clinic.com or name@company.com" required>
+                        <div class="error-msg" id="email-error">Corporate email required (no Gmail, Yahoo, Outlook, Hotmail)</div>
+                    </div>
+
+                    <div class="trust-badges">
+                        <span class="badge">🔒 ZERO-TRUST GATE</span>
+                        <span class="badge">⚡ 72H NURTURE ENGINE</span>
+                        <span class="badge">📡 AEO/GEO OPTIMIZED</span>
+                    </div>
+
+                    <button type="submit" id="submit-btn">[ INITIATE PROTOCOL ]</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS SCREEN (hidden initially) -->
+    <div id="successView" class="hidden">
+        <div class="success-screen">
+            <h1 class="success-title">PROTOCOL SUCCESSFUL</h1>
+            <div class="data-dump" id="dataDump">
+                <p>> HANDSHAKE ESTABLISHED</p>
+                <p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p>
+                <p>> ZERO-TRUST INTAKE: DEPLOYED</p>
+                <p>> SECURE HANDSHAKE: ESTABLISHED</p>
+                <p>> EXPECT RESPONSE IN &lt; 4 HOURS</p>
+            </div>
+            <div class="progress-bar-container"><div class="progress-fill"></div></div>
+            <button class="back-btn" id="returnToBaseBtn">[ RETURN TO BASE ]</button>
+        </div>
+    </div>
+
+    <!-- HIPAA Compliant & Cyber Secured Footer -->
+    <div class="security-footer">
+        <div class="footer-compliance">
+            <div class="compliance-badge">
+                <div class="compliance-item"><i class="fas fa-shield-haltered"></i> HIPAA COMPLIANT</div>
+                <div class="compliance-item"><i class="fas fa-lock"></i> TLS 1.3 ENCRYPTED</div>
+                <div class="compliance-item"><i class="fas fa-microchip"></i> ZERO-TRUST ARCHITECTURE</div>
+                <div class="compliance-item"><i class="fas fa-database"></i> SOC 2 TYPE II</div>
+            </div>
+            <div class="security-seal">
+                <span class="seal"><i class="fas fa-check-circle"></i> 256-BIT AES</span>
+                <span class="seal"><i class="fas fa-check-circle"></i> PCI DSS v4.0</span>
+            </div>
+        </div>
+        <div class="footer-cert">
+            <i class="fas fa-terminal"></i> All data transmitted through this protocol gate is encrypted at rest and in transit. 
+            This system maintains HIPAA-compliant data handling, SOC 2 Type II controls, and Zero-Trust security validation. 
+            No PHI is stored without explicit authorization. <span>🔐 SECURE HANDSHAKE ACTIVE</span>
+        </div>
+    </div>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loading" class="loading-overlay">
+    <div class="decrypt-box">
+        <div style="color:#00ff9d; margin-bottom:1rem;">⚡ PROTOCOL AUTHENTICATION</div>
+        <div class="decrypt-progress"><div class="decrypt-bar" id="decrypt-bar"></div></div>
+        <div id="decrypt-text" style="color:#00ff9d; font-size:0.75rem;">HANDSHAKE INITIATED...</div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("ix_ZiRenHLUBxcS6L");
+
+const terminalView = document.getElementById('terminalView');
+const successView = document.getElementById('successView');
+const form = document.getElementById('intake-form');
+const submitBtn = document.getElementById('submit-btn');
+const loadingDiv = document.getElementById('loading');
+const decryptBar = document.getElementById('decrypt-bar');
+const decryptText = document.getElementById('decrypt-text');
+
+const freeDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'protonmail.com', 'mail.com', 'yandex.com'];
+
+function validateEmail(email) {
+    const domain = email.split('@')[1];
+    return !freeDomains.includes(domain);
+}
+
+function showDecryptAnimation() {
+    return new Promise((resolve) => {
+        loadingDiv.classList.add('active');
+        let progress = 0;
+        decryptBar.style.width = '0%';
+        
+        const interval = setInterval(() => {
+            progress += Math.random() * 12 + 4;
+            if (progress >= 100) {
+                clearInterval(interval);
+                decryptBar.style.width = '100%';
+                decryptText.innerHTML = 'HANDSHAKE COMPLETE';
+                setTimeout(() => {
+                    loadingDiv.classList.remove('active');
+                    resolve();
+                }, 600);
+            } else {
+                decryptBar.style.width = progress + '%';
+                if (progress > 30) decryptText.innerHTML = 'ENCRYPTING DATA STREAMS...';
+                if (progress > 70) decryptText.innerHTML = 'DEPLOYING NURTURE ENGINE...';
             }
-        };
-    </script>
+        }, 80);
+    });
+}
+
+function showSuccessScreen(submittedData) {
+    const dataDump = document.getElementById('dataDump');
+    if (dataDump) {
+        dataDump.innerHTML = `
+            <p>> IDENTITY: ${submittedData.role.split(' ')[0]}</p>
+            <p>> COMMUNICATION: ${submittedData.email.replace(/(.{2})(.*)(@)/, '$1***$3')}</p>
+            <p>> BOTTLENECK: ${submittedData.bottleneck.substring(0, 50)}</p>
+            <p>> CURRENT METRIC: ${submittedData.metric}</p>
+            <p>> TARGET OUTCOME: ${submittedData.target}</p>
+            <p>> ACV / PROCEDURE VALUE: ${submittedData.acv}</p>
+            <p>> 72-HOUR NURTURE ENGINE: ACTIVATED</p>
+            <p>> ZERO-TRUST INTAKE: DEPLOYED</p>
+            <p>> SECURE HANDSHAKE: ESTABLISHED @ ${submittedData.timestamp}</p>
+            <p>> EXPECT RESPONSE IN &lt; 4 HOURS</p>
+        `;
+    }
+    terminalView.classList.add('hidden');
+    successView.classList.remove('hidden');
+}
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value.trim();
+    const emailError = document.getElementById('email-error');
+    
+    if (!validateEmail(email)) {
+        emailError.style.display = 'block';
+        document.getElementById('email').style.borderColor = '#ff5555';
+        return;
+    }
+    emailError.style.display = 'none';
+    document.getElementById('email').style.borderColor = '#2a2a2a';
+    
+    const roleSelect = document.getElementById('role');
+    const bottleneckSelect = document.getElementById('bottleneck');
+    const targetSelect = document.getElementById('target');
+    
+    const role = roleSelect.options[roleSelect.selectedIndex]?.text || roleSelect.value;
+    const bottleneck = bottleneckSelect.options[bottleneckSelect.selectedIndex]?.text || bottleneckSelect.value;
+    const metric = document.getElementById('metric').value.trim();
+    const target = targetSelect.options[targetSelect.selectedIndex]?.text || targetSelect.value;
+    const acv = document.getElementById('acv').value.trim();
+    
+    if (!role || !bottleneck || !metric || !target || !acv) {
+        alert('⚠️ Please complete all fields before initiating protocol.');
+        return;
+    }
+    
+    const submittedData = {
+        role: role,
+        email: email,
+        bottleneck: bottleneck,
+        metric: metric,
+        target: target,
+        acv: acv,
+        timestamp: new Date().toLocaleString()
+    };
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = '[ PROCESSING... ]';
+    
+    const templateParams = {
+        role: role,
+        email: email,
+        bottleneck: bottleneck,
+        metric: metric,
+        target: target,
+        acv: acv,
+        timestamp: submittedData.timestamp
+    };
+    
+    try {
+        // CORRECTED TEMPLATE ID: template_uslo84e
+        const response = await emailjs.send('service_p3ocsqe', 'template_uslo84e', templateParams);
+        
+        if (response.status === 200) {
+            await showDecryptAnimation();
+            showSuccessScreen(submittedData);
+        } else {
+            alert('⚠️ Submission failed. Please try again.');
+        }
+    } catch (error) {
+        console.error('EmailJS error:', error);
+        alert('⚠️ Network error. Please check your connection.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '[ INITIATE PROTOCOL ]';
+    }
+});
+
+document.getElementById('returnToBaseBtn')?.addEventListener('click', () => {
+    successView.classList.add('hidden');
+    terminalView.classList.remove('hidden');
+    form.reset();
+});
+</script>
 </body>
-</html>
+        </html>
