@@ -15,7 +15,7 @@
     
     <title>Fabian Molokwu | Systems Architect & Revenue Engineer — Zero-Trust Revenue Pipelines</title>
     
-    <!-- JSON-LD Schema -->
+    <!-- JSON-LD Schema for AEO + GEO Authority -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -215,7 +215,7 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* Toggle Button (Hamburger) */
+        /* Toggle Button - hidden on desktop, visible on mobile */
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -230,7 +230,7 @@
             transform: scale(1.05);
         }
 
-        /* Hero Section (unchanged) */
+        /* Hero Section */
         .hero-section {
             padding: 4rem 0 4rem 0;
             border-bottom: 1px solid rgba(0, 255, 157, 0.2);
@@ -379,7 +379,7 @@
             left: 0;
         }
 
-        /* System Grid */
+        /* System Grid (Architectural Pillars) */
         .system-grid-detailed {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -477,8 +477,8 @@
             margin: 2rem 0 1.5rem 0;
         }
 
-        .mission-card,
-        .about-card {
+        /* Mission & About Cards */
+        .mission-card, .about-card {
             background: rgba(0, 0, 0, 0.65);
             border: 1px solid #2a2a2a;
             border-radius: 28px;
@@ -487,6 +487,7 @@
             margin-bottom: 2rem;
         }
 
+        /* FAQ Terminal Accordion */
         .faq-terminal-section {
             background: #050505;
             border: 1px solid #1a1a1a;
@@ -814,7 +815,14 @@
             menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
         }
 
+        // On resize, remove the show class if window width > 768px
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('show');
+            }
+        });
+
         renderFAQ();
     </script>
 </body>
-    </html>
+        </html>
