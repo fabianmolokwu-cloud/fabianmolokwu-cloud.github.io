@@ -8,14 +8,14 @@
     <meta name="author" content="Fabian Molokwu - Systems Architect & Revenue Engineer">
     <meta name="robots" content="index, follow">
     
-    <!-- Security Policy Header -->
+    <!-- Security Policy Header (Cybersecurity Quality) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io https://script.google.com https://api.emailjs.com;">
     <meta name="zero-trust" content="enforced">
     <meta name="security-framework" content="Zero-Trust Revenue Architecture">
     
     <title>Fabian Molokwu | Systems Architect & Revenue Engineer — Zero-Trust Revenue Pipelines</title>
     
-    <!-- JSON-LD Schema (same as before) -->
+    <!-- JSON-LD Schema for AEO + GEO Authority -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -221,22 +221,19 @@
             font-size: 1.5rem;
             color: var(--accent-glow);
             cursor: pointer;
-            background: transparent;
+            background: none;
             border: none;
             transition: transform 0.2s ease;
             z-index: 1001;
             padding: 0.5rem;
-            margin-left: auto;
-            flex-shrink: 0;
+            margin-left: auto;      /* pushes button to the right */
+            flex-shrink: 0;         /* prevents shrinking */
         }
 
         .menu-toggle:hover {
             transform: scale(1.05);
         }
 
-        /* Rest of your CSS (hero, grids, cards, footer) remains exactly the same as before */
-        /* For brevity, I keep all the existing styles from your previous version */
-        /* ... */
         /* Hero Section */
         .hero-section {
             padding: 4rem 0 4rem 0;
