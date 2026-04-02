@@ -15,7 +15,7 @@
     
     <title>Fabian Molokwu | Systems Architect & Revenue Engineer — Zero-Trust Revenue Pipelines</title>
     
-    <!-- JSON-LD Schema for AEO + GEO Authority with Technical Proficiency -->
+    <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -195,7 +195,8 @@
             letter-spacing: 0.5px;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--accent-glow);
             text-shadow: 0 0 5px var(--accent-glow);
         }
@@ -214,6 +215,7 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
+        /* Toggle Button (Hamburger) */
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -221,8 +223,14 @@
             cursor: pointer;
             background: none;
             border: none;
+            transition: transform 0.2s ease;
         }
 
+        .menu-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section (unchanged) */
         .hero-section {
             padding: 4rem 0 4rem 0;
             border-bottom: 1px solid rgba(0, 255, 157, 0.2);
@@ -288,7 +296,7 @@
             box-shadow: 0 0 18px var(--accent-glow);
         }
 
-        /* Tech Stack Qualities Grid */
+        /* Tech Stack Grid */
         .tech-stack-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -371,7 +379,7 @@
             left: 0;
         }
 
-        /* System Grid (Architectural Pillars) */
+        /* System Grid */
         .system-grid-detailed {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -469,8 +477,8 @@
             margin: 2rem 0 1.5rem 0;
         }
 
-        /* Mission & About Cards */
-        .mission-card, .about-card {
+        .mission-card,
+        .about-card {
             background: rgba(0, 0, 0, 0.65);
             border: 1px solid #2a2a2a;
             border-radius: 28px;
@@ -479,7 +487,6 @@
             margin-bottom: 2rem;
         }
 
-        /* FAQ Terminal Accordion */
         .faq-terminal-section {
             background: #050505;
             border: 1px solid #1a1a1a;
@@ -598,9 +605,14 @@
             text-shadow: 0 0 5px var(--accent-glow);
         }
 
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
-            .menu-toggle { display: block; }
+            .container {
+                padding: 0 1rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
             .nav-links {
                 display: none;
                 width: 100%;
@@ -610,10 +622,18 @@
                 margin-top: 1rem;
                 border-top: 1px solid rgba(0, 255, 157, 0.2);
             }
-            .nav-links.show { display: flex; }
-            .tech-stack-grid { gap: 1.5rem; }
-            .system-grid-detailed { gap: 1.5rem; }
-            .section-title { font-size: 1.4rem; }
+            .nav-links.show {
+                display: flex;
+            }
+            .tech-stack-grid {
+                gap: 1.5rem;
+            }
+            .system-grid-detailed {
+                gap: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
@@ -621,7 +641,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo"><i class="fas fa-shield-haltered"></i> FABIAN MOLOKWU</a>
-            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="active">HOME</a>
                 <a href="case-study.html">CASE STUDIES</a>
