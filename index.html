@@ -8,7 +8,7 @@
     <meta name="author" content="Fabian Molokwu - Systems Architect & Revenue Engineer">
     <meta name="robots" content="index, follow">
     
-    <!-- Security Policy Header (Cybersecurity Quality) -->
+    <!-- Security Policy Header -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://challenges.cloudflare.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formspree.io https://script.google.com https://api.emailjs.com;">
     <meta name="zero-trust" content="enforced">
     <meta name="security-framework" content="Zero-Trust Revenue Architecture">
@@ -221,10 +221,13 @@
             font-size: 1.5rem;
             color: var(--accent-glow);
             cursor: pointer;
-            background: none;
+            background: transparent;
             border: none;
             transition: transform 0.2s ease;
             z-index: 1001;
+            padding: 0.5rem;
+            margin-left: auto;
+            flex-shrink: 0;
         }
 
         .menu-toggle:hover {
@@ -232,10 +235,8 @@
         }
 
         /* Rest of your CSS (hero, grids, cards, footer) remains exactly the same as before */
+        /* For brevity, I keep all the existing styles from your previous version */
         /* ... */
-        /* For brevity, I'll keep all the existing styles from your previous version. */
-        /* I'll paste them here in full but the key is the toggle CSS above and the media query below. */
-
         /* Hero Section */
         .hero-section {
             padding: 4rem 0 4rem 0;
