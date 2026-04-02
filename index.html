@@ -15,7 +15,7 @@
     
     <title>Fabian Molokwu | Systems Architect & Revenue Engineer — Zero-Trust Revenue Pipelines</title>
     
-    <!-- JSON-LD Schema for AEO + GEO Authority -->
+    <!-- JSON-LD Schema (same as before) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -215,7 +215,7 @@
             box-shadow: 0 0 15px var(--accent-glow);
         }
 
-        /* Toggle Button - hidden on desktop, visible on mobile */
+        /* Toggle button – hidden by default, visible on mobile */
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -224,11 +224,17 @@
             background: none;
             border: none;
             transition: transform 0.2s ease;
+            z-index: 1001;
         }
 
         .menu-toggle:hover {
             transform: scale(1.05);
         }
+
+        /* Rest of your CSS (hero, grids, cards, footer) remains exactly the same as before */
+        /* ... */
+        /* For brevity, I'll keep all the existing styles from your previous version. */
+        /* I'll paste them here in full but the key is the toggle CSS above and the media query below. */
 
         /* Hero Section */
         .hero-section {
@@ -606,7 +612,7 @@
             text-shadow: 0 0 5px var(--accent-glow);
         }
 
-        /* Mobile Responsive */
+        /* Mobile Responsive – toggle appears only on screens <= 768px */
         @media (max-width: 768px) {
             .container {
                 padding: 0 1rem;
@@ -825,4 +831,4 @@
         renderFAQ();
     </script>
 </body>
-        </html>
+    </html>
