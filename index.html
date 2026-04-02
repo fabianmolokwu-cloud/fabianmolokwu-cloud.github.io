@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Systems Architect & Revenue Engineer specializing in High-Concurrency Data Orchestration and Zero-Trust Revenue Pipelines. Engineered validation engines for 50,000+ concurrent users with sub-250ms latency.">
-    <meta name="keywords" content="Systems Architect, Revenue Engineer, Data Orchestration, Zero-Trust Architecture, Salesforce Governance, RevOps, AEO, GEO, 50k Concurrent Users, sub-250ms Latency">
+    <meta name="description" content="Fabian Molokwu - Systems Architect & Revenue Engineer. Specializing in High-Concurrency Data Orchestration and Zero-Trust Revenue Pipelines. Engineered validation engines for 50,000+ concurrent users with sub-250ms latency.">
+    <meta name="keywords" content="Fabian Molokwu, Systems Architect, Revenue Engineer, Data Orchestration, Zero-Trust Architecture, Salesforce Governance, RevOps, AEO, GEO, 50k Concurrent Users, sub-250ms Latency">
     <meta name="author" content="Fabian Molokwu - Systems Architect & Revenue Engineer">
     <meta name="robots" content="index, follow">
     
@@ -21,6 +21,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Fabian Molokwu",
+      "email": "fabianmolokwu@gmail.com",
       "jobTitle": "Systems Architect & Revenue Engineer",
       "description": "I build the technical infrastructure that scales B2B revenue. Engineered validation engines for 50,000+ concurrent users with sub-250ms latency. Specializing in High-Concurrency Data Orchestration and Zero-Trust Revenue Pipelines.",
       "url": "https://revenue-architect.com",
@@ -89,7 +90,7 @@
     <meta property="og:title" content="Fabian Molokwu | Systems Architect & Revenue Engineer">
     <meta property="og:description" content="I build the technical infrastructure that scales B2B revenue. Engineered validation engines for 50,000+ concurrent users with sub-250ms latency.">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Systems Architect & Revenue Engineer">
+    <meta property="og:site_name" content="Fabian Molokwu - Systems Architect & Revenue Engineer">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -122,7 +123,6 @@
             font-family: var(--font-sans);
             scroll-behavior: smooth;
             min-height: 100vh;
-            /* Engineer-Grade Text Rendering */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
@@ -374,7 +374,7 @@
         /* System Grid (Architectural Pillars) */
         .system-grid-detailed {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             padding: 2rem 0 3rem 0;
         }
@@ -469,6 +469,96 @@
             margin: 2rem 0 1.5rem 0;
         }
 
+        /* Mission & About Cards */
+        .mission-card, .about-card {
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid #2a2a2a;
+            border-radius: 28px;
+            padding: 2rem;
+            backdrop-filter: blur(8px);
+            margin-bottom: 2rem;
+        }
+
+        /* FAQ Terminal Accordion */
+        .faq-terminal-section {
+            background: #050505;
+            border: 1px solid #1a1a1a;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .faq-item-gate {
+            border-bottom: 1px solid #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item-gate:last-child {
+            border-bottom: none;
+        }
+
+        .faq-trigger-btn {
+            width: 100%;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            padding: 1.2rem 0;
+            cursor: pointer;
+            text-align: left;
+            gap: 1rem;
+        }
+
+        .faq-trigger-btn::before {
+            content: ">>";
+            color: #00ff9d;
+            font-weight: 800;
+            font-size: 0.85rem;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .faq-trigger-btn h4 {
+            color: #e0e0e0;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item-gate:hover h4 {
+            color: #00ff9d;
+        }
+
+        .faq-response-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+        }
+
+        .faq-item-gate.active .faq-response-container {
+            max-height: 300px;
+            transition: max-height 0.8s ease-in;
+        }
+
+        .faq-answer-inner {
+            padding: 0 2rem 1.5rem 2.5rem;
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            border-left: 2px solid #00ff9d;
+        }
+
+        .faq-answer-inner strong {
+            color: #00ff9d;
+            background: rgba(0, 255, 157, 0.1);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
         /* Footer */
         .revenue-footer {
             background: #030303;
@@ -498,6 +588,16 @@
             margin-top: 1rem;
         }
 
+        .verification-note a {
+            color: var(--accent-glow);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--accent-glow);
+        }
+
+        .verification-note a:hover {
+            text-shadow: 0 0 5px var(--accent-glow);
+        }
+
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
             .menu-toggle { display: block; }
@@ -520,7 +620,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo"><i class="fas fa-shield-haltered"></i> SYSTEMS_ARCHITECT</a>
+            <a href="index.html" class="logo"><i class="fas fa-shield-haltered"></i> FABIAN MOLOKWU</a>
             <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
             <div class="nav-links" id="navLinks">
                 <a href="index.html" class="active">HOME</a>
@@ -536,7 +636,7 @@
             <div style="font-family: monospace; font-size: 0.7rem; color: var(--accent-glow); margin-bottom: 1rem;">
                 <i class="fas fa-microchip"></i> HIGH-CONCURRENCY DATA ORCHESTRATION // ZERO-TRUST REVENUE PIPELINES
             </div>
-            <h1 class="hero-mono-headline">Systems Architect & Revenue Engineer<br>Growth Operation Specialist</h1>
+            <h1 class="hero-mono-headline">FABIAN MOLOKWU<br>Systems Architect & Revenue Engineer</h1>
             <div class="hero-sub">Specializing in High-Concurrency Data Orchestration and Zero-Trust Revenue Pipelines.</div>
             <div class="hero-hook">
                 "I build the technical infrastructure that scales B2B revenue. Engineered validation engines for <strong>50,000+ concurrent users</strong> with <strong>sub-250ms latency</strong>."
@@ -623,6 +723,21 @@
                 </div>
             </div>
         </div>
+
+        <div class="section-title"><i class="fas fa-bullseye"></i> Commander's Intent // Philosophy</div>
+        <div class="mission-card">
+            <p style="font-size: 1.1rem; line-height: 1.6;">"I do not build marketing campaigns. I engineer deterministic revenue systems. In an era of AI-driven search and rising data threats, I provide high-scale B2B SaaS and clinical enterprises the technical infrastructure to capture, nurture, and close high-margin contracts with zero-trust security. My systems run at <strong>sub-250ms latency</strong> and handle <strong>50,000+ concurrent events</strong> without data collision."</p>
+        </div>
+
+        <div class="section-title"><i class="fas fa-user-astronaut"></i> Architect Narrative // About</div>
+        <div class="about-card">
+            <p><strong style="color: var(--accent-glow);">The Systems Architect with a Security-First Mindset.</strong></p>
+            <p style="margin-top: 1rem;">Most revenue operators are great at spending your budget but terrible at protecting your data or your margins. As a Cybersecurity specialist and Systems Architect, I see your revenue pipeline as a technical system that requires <strong>field-level governance, exception handling, and zero-trust validation</strong>.</p>
+            <p style="margin-top: 1rem;">If your response time is over 2 minutes, your system is "down." If your intake forms aren't encrypted, your reputation is at risk. I bridge the gap between Data Integrity and Demand Generation, building high-velocity engines for those who can't afford to lose a single high-ticket lead. My validation engines process <strong>50,000+ concurrent events</strong> with <strong>sub-250ms latency</strong> — that's the difference between winning and losing in high-concurrency environments.</p>
+        </div>
+
+        <div class="section-title"><i class="fas fa-code-branch"></i> System Logic // FAQ</div>
+        <div class="faq-terminal-section" id="faqContainer"></div>
     </div>
 
     <footer class="revenue-footer">
@@ -636,18 +751,50 @@
             <div class="verification-note">
                 <i class="fas fa-shield-haltered"></i> Verification Note: My LinkedIn profile is currently undergoing a security audit. 
                 This portfolio serves as my verified professional identity and technical record. 
-                For direct verification, please contact me via the email provided in my CV.
+                For direct verification, please contact me at <a href="mailto:fabianmolokwu@gmail.com">fabianmolokwu@gmail.com</a>
             </div>
         </div>
     </footer>
 
     <script>
+        // FAQ Data
+        const faqData = [
+            { q: "What makes a Systems Architect different from a Revenue Operations lead?", a: "A Revenue Operations lead focuses on tools and reporting. A Systems Architect engineers the underlying infrastructure—field-level governance, exception handling, and zero-trust validation. I don't just manage the CRM; I build the validation engine that processes <strong>50,000+ concurrent events</strong> with <strong>sub-250ms latency</strong>." },
+            { q: "What is Zero-Trust Revenue Architecture?", a: "Treat every inbound signal as a potential 'bot' or 'dirty data' until it passes a 3-point validation check. No lead enters the CRM without verification. This eliminates <strong>50% of junk leads</strong> and ensures your sales team only engages with verified, high-intent prospects." },
+            { q: "How does Exception Handling prevent data decay?", a: "When a lead from CopilotKit doesn't have a valid GitHub ID, the system doesn't break—it routes to a 'Data Cleanup' task. This prevents CRM pollution and maintains data integrity. <strong>100% auditability</strong> for all field-level changes." },
+            { q: "What is sub-250ms validation?", a: "Traditional validation takes 3+ seconds, causing 15% drop-off. My validation engines process in <strong>sub-250ms</strong>, handling <strong>50,000+ concurrent users</strong> with zero data collisions. That's the difference between winning and losing in high-concurrency environments." }
+        ];
+
+        function renderFAQ() {
+            const container = document.getElementById('faqContainer');
+            if (!container) return;
+            container.innerHTML = faqData.map((item) => `
+                <div class="faq-item-gate">
+                    <button class="faq-trigger-btn"><h4>${item.q}</h4></button>
+                    <div class="faq-response-container">
+                        <div class="faq-answer-inner">${item.a}</div>
+                    </div>
+                </div>
+            `).join('');
+            
+            document.querySelectorAll('.faq-item-gate').forEach(item => {
+                const btn = item.querySelector('.faq-trigger-btn');
+                btn.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    document.querySelectorAll('.faq-item-gate').forEach(i => i.classList.remove('active'));
+                    if (!isActive) item.classList.add('active');
+                });
+            });
+        }
+
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
         if (menuToggle) {
             menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
         }
+
+        renderFAQ();
     </script>
 </body>
     </html>
