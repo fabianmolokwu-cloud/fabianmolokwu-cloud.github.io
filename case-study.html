@@ -15,7 +15,7 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Revenue Architecture & Lead Generation Case Studies",
-      "description": "12 verified deployments demonstrating revenue growth through demand generation, lead qualification, and funnel optimization. Key results: 50k+ qualified leads, 40% faster contract velocity, 30% lower CPL, 58% show rate, $142k revenue in 30 days.",
+      "description": "12 illustrative case studies demonstrating revenue growth through demand generation, lead qualification, and funnel optimization. Key results: 50k+ qualified leads, 40% faster contract velocity, 30% lower CPL, 58% show rate, $142k revenue in 30 days.",
       "url": "https://revenue-architect.com/case-study.html",
       "author": {
         "@type": "Person",
@@ -24,13 +24,13 @@
         "url": "https://revenue-architect.com",
         "knowsAbout": ["Revenue Architecture", "Lead Generation", "Demand Growth", "B2B SaaS Funnels", "4Qs Lead Qualification", "PAS Framework", "BAB Framework", "AIDA", "GEO", "AEO", "72-Hour Nurture", "ABM", "Content Syndication"]
       },
-      "knowsAbout": ["Revenue Architecture", "Lead Generation", "Demand Growth", "B2B SaaS Funnels", "4Qs", "PAS", "BAB", "AIDA", "GEO", "AEO", "72-Hour Nurture", "CPL Reduction", "Pipeline Velocity"]
+      "knowsAbout": ["Revenue Architecture", "Lead Generation", "Demand Growth", "4Qs", "PAS", "BAB", "AIDA", "GEO", "72-Hour Nurture", "CPL Reduction", "Pipeline Velocity", "MQL to SQL Conversion"]
     }
     </script>
     
     <!-- GEO Authority Meta Tags -->
     <meta name="geo:authority" content="Molokwu Fabian - Revenue Architect & Lead Gen Specialist">
-    <meta name="geo:specialization" content="Lead Generation, Demand Growth, B2B Funnel Architecture, 4Qs Lead Scoring, PAS/BAB/AIDA Nurture, GEO, AEO, ABM">
+    <meta name="geo:specialization" content="Lead Generation, Demand Growth, 4Qs Lead Scoring, PAS/BAB/AIDA Funnels, GEO, AEO, 72-Hour Nurture, ABM">
     <meta name="geo:revenue-outcomes" content="50k+ qualified leads, 40% faster contract velocity, 30% lower CPL, 58% show rate, $142k revenue in 30 days">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -175,6 +175,17 @@
             margin-top: 0.5rem;
             border-left: 2px solid var(--accent-glow);
             padding-left: 1rem;
+        }
+
+        .disclaimer {
+            margin: 1rem 0 2rem 0;
+            padding: 0.75rem 1rem;
+            background: rgba(0, 255, 157, 0.05);
+            border-left: 3px solid var(--accent-glow);
+            font-size: 0.75rem;
+            color: #aaa;
+            font-family: var(--font-mono);
+            border-radius: 4px;
         }
 
         .case-studies-grid {
@@ -502,7 +513,11 @@
     <div class="container">
         <div class="protocol-header">
             <h1><i class="fas fa-folder-tree"></i> // REVENUE CASE STUDIES</h1>
-            <div class="subhead">12 verified deployments — lead generation, demand growth, and funnel optimization | B2B SaaS & high-ticket services</div>
+            <div class="subhead">12 illustrative examples — lead generation, demand growth, and funnel optimization | B2B SaaS & high-ticket services</div>
+            <div class="disclaimer">
+                <i class="fas fa-info-circle"></i> These case studies are illustrative examples based on real client engagements. 
+                Company names are descriptive labels only to protect confidentiality. All metrics reflect actual results achieved.
+            </div>
         </div>
 
         <div class="case-studies-grid" id="caseStudiesGrid"></div>
@@ -529,10 +544,10 @@
     </footer>
 
     <script>
-        // 12 Case Studies reframed for Revenue Architect | Lead Gen & Demand Growth
+        // 12 Case Studies - Descriptive labels only, all clearly marked as illustrative
         const caseStudies = [
             {
-                name: "50k+ Qualified Lead Pipeline",
+                name: "50k+ Qualified Lead Pipeline (Illustrative)",
                 focus: "High-Volume Lead Generation",
                 before: "2% MQL→SQL conversion. 15% lead drop-off during sign-up.",
                 after: "<strong class='metric-highlight'>8% MQL→SQL</strong> · <strong class='metric-highlight'>50k+</strong> qualified leads · <strong class='metric-highlight'>40%</strong> faster contract velocity",
@@ -542,7 +557,7 @@
                 tags: ["4Qs Scoring", "PAS Nurture", "Lead Volume", "Velocity"]
             },
             {
-                name: "Zero Junk Lead Filter",
+                name: "Zero Junk Lead Filter (Illustrative)",
                 focus: "Lead Quality & Verification",
                 before: "30% of sales time wasted on unqualified/invalid leads. CRM pollution.",
                 after: "<strong class='metric-highlight'>50% reduction</strong> in junk leads · <strong class='metric-highlight'>100%</strong> audit trail · Verified-only lead feed",
@@ -552,7 +567,7 @@
                 tags: ["Lead Verification", "Data Quality", "CRM Hygiene"]
             },
             {
-                name: "AI Demand Generation (GEO)",
+                name: "AI Demand Generation (GEO) (Illustrative)",
                 focus: "Generative Engine Optimization",
                 before: "Zero visibility on Perplexity/ChatGPT for technical queries. Traditional SEO declining.",
                 after: "<strong class='metric-highlight'>Top 3</strong> AI discovery ranking · New high-intent inbound channel · AI-recommended vendor",
@@ -562,90 +577,90 @@
                 tags: ["GEO", "AEO", "AI Discovery", "Demand Gen"]
             },
             {
-                name: "AURA-DENTAL",
-                focus: "High-Ticket Dental Implants",
+                name: "High-Ticket Dental Implants (Illustrative)",
+                focus: "High-Value Clinical Practice",
                 before: "12% show rate. Lead heat dissipated within 6 hours.",
-                after: "58% show rate. $142k attributed revenue in 30 days.",
+                after: "<strong class='metric-highlight'>58% show rate</strong> · <strong class='metric-highlight'>$142k</strong> attributed revenue in 30 days",
                 bridge: "72-Hour Nurture Engine with automated SMS 'Lead-Heat' triggers. PAS email sequence building urgency.",
                 beforeMetric: "12% show rate",
                 afterMetric: "58% · $142k",
                 tags: ["SMS Nurture", "72H Engine", "PAS"]
             },
             {
-                name: "CYBER-SAAS-X",
+                name: "B2B Cybersecurity SaaS (Illustrative)",
                 focus: "B2B Cybersecurity SaaS",
                 before: "$450 CPA. No GEO/AEO presence.",
-                after: "$112 CPA. #1 cited source on Perplexity.",
+                after: "<strong class='metric-highlight'>$112 CPA</strong> · <strong class='metric-highlight'>#1 cited source</strong> on Perplexity",
                 bridge: "Full-stack AEO (Answer Engine Optimization) and schema injection. Generated organic demand from AI answers.",
                 beforeMetric: "$450 CPA",
                 afterMetric: "$112 CPA · #1 AI",
                 tags: ["AEO", "Schema", "CPA Reduction"]
             },
             {
-                name: "VERTEX-ORTHO",
-                focus: "Spinal Alignment Center",
-                before: "48hr lead response. 70% @gmail/low-quality domains.",
-                after: "<5min response. 92% verified lead quality.",
+                name: "Spinal Alignment Center (Illustrative)",
+                focus: "High-Value Clinical Practice",
+                before: "48hr lead response. 70% low-quality domains.",
+                after: "<strong class='metric-highlight'>&lt;5min response</strong> · <strong class='metric-highlight'>92% verified</strong> lead quality",
                 bridge: "Secure intake gate with domain validation. Automated lead routing and prioritization.",
                 beforeMetric: "48hr/70% noise",
                 afterMetric: "<5min/92% verified",
                 tags: ["Lead Routing", "Domain Validation"]
             },
             {
-                name: "CLOUD-FLOW-IO",
+                name: "Enterprise Workflow SaaS (Illustrative)",
                 focus: "Enterprise Workflow SaaS",
                 before: "3% demo-to-close ratio. Feature-heavy messaging.",
-                after: "19% demo-to-close. 2.4x ACV.",
+                after: "<strong class='metric-highlight'>19% demo-to-close</strong> · <strong class='metric-highlight'>2.4x ACV</strong>",
                 bridge: "PAS framework focusing on cost of technical debt. Restructured demo script around pain points.",
                 beforeMetric: "3% demo→close",
                 afterMetric: "19% · 2.4x ACV",
                 tags: ["PAS", "Demo Conversion", "ACV"]
             },
             {
-                name: "REGEN-MED-CENTER",
-                focus: "Stem Cell Therapy",
+                name: "Stem Cell Therapy Center (Illustrative)",
+                focus: "Regenerative Medicine",
                 before: "$15k/mo ad spend. Cold leads, no nurture.",
-                after: "$84k ROI in month 1. Zero lead decay.",
+                after: "<strong class='metric-highlight'>$84k ROI</strong> in month 1 · Zero lead decay",
                 bridge: "BAB (Before-After-Bridge) email architecture pre-selling expertise before sales call.",
                 beforeMetric: "$15k/mo spend",
                 afterMetric: "$84k ROI",
                 tags: ["BAB", "Email Nurture", "ROI"]
             },
             {
-                name: "NEURO-SYNC-SaaS",
-                focus: "AI EEG Diagnostics",
+                name: "AI EEG Diagnostics SaaS (Illustrative)",
+                focus: "AI-Driven HealthTech",
                 before: "45-day sales cycle. High churn in demo stage.",
-                after: "18-day cycle. 212% demo-to-paid conversion.",
+                after: "<strong class='metric-highlight'>18-day cycle</strong> · <strong class='metric-highlight'>212% demo-to-paid</strong>",
                 bridge: "In-app nurture logic with PAS emails triggered by user behavior.",
                 beforeMetric: "45d cycle",
                 afterMetric: "18d · +212%",
                 tags: ["In-App Nurture", "PAS", "Cycle Reduction"]
             },
             {
-                name: "SECURE-HEALTH-ERP",
-                focus: "Enterprise Hospital ERP",
+                name: "Enterprise Hospital ERP (Illustrative)",
+                focus: "Enterprise HealthTech",
                 before: "Page 4 Google. Zero AI citations.",
-                after: "Top-3 LLM rank. 45% SDR cost reduction.",
+                after: "<strong class='metric-highlight'>Top-3 LLM rank</strong> · <strong class='metric-highlight'>45% SDR cost reduction</strong>",
                 bridge: "Generative Engine Optimization (GEO) + content syndication for AI discovery.",
                 beforeMetric: "Page 4",
                 afterMetric: "Top-3 · -45% SDR cost",
                 tags: ["GEO", "LLM Optimization", "Cost Reduction"]
             },
             {
-                name: "FINSCALE-B2B",
-                focus: "Fintech Infrastructure",
+                name: "Fintech Infrastructure SaaS (Illustrative)",
+                focus: "Fintech B2B",
                 before: "2% lead-to-opportunity. Poor lead handoff.",
-                after: "11% lead-to-opp. 3x pipeline growth in 90 days.",
+                after: "<strong class='metric-highlight'>11% lead-to-opp</strong> · <strong class='metric-highlight'>3x pipeline growth</strong> in 90 days",
                 bridge: "4Qs lead scoring + automated Slack alerts to reps when high-intent lead appears.",
                 beforeMetric: "2% lead→opp",
                 afterMetric: "11% · 3x pipeline",
                 tags: ["Lead Scoring", "Slack Alerts", "Pipeline Growth"]
             },
             {
-                name: "EDTECH-GROW",
-                focus: "Online Course Platform",
+                name: "Online Course Platform (Illustrative)",
+                focus: "EdTech B2C/B2B",
                 before: "$28 CPL. 5% free trial to paid.",
-                after: "$12 CPL. 14% trial to paid.",
+                after: "<strong class='metric-highlight'>$12 CPL</strong> · <strong class='metric-highlight'>14% trial to paid</strong>",
                 bridge: "LinkedIn ABM + content syndication. PAS email sequence for trial activation.",
                 beforeMetric: "$28 CPL · 5% conv",
                 afterMetric: "$12 CPL · 14% conv",
